@@ -1,0 +1,125 @@
+@use "../../styles/variables/colors.scss";
+
+.header__search {
+    width: 16px;
+    height: 16px;
+    padding: 12px;
+}
+
+.header__arrow-back {
+    display: none;
+}
+
+.header__input:-webkit-autofill {
+    -webkit-transition-delay: 99999s;
+}
+
+.drop-down.header__search-dropdown {
+    background-color: colors.$bg_brand;
+    box-shadow: 5px 5px 5px colors.$bg_veil, 0px -2px 5px colors.$bg_veil;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 300px;
+    top: 0;
+    left: 60px;
+    padding: 10px;
+
+    &::before {
+        display: none;
+    }
+
+    .header__input {
+        padding: 10px;
+        font-size: 16px;
+        font-weight: 400;
+        background-color: colors.$bg-input;
+        width: 100%;
+        color: colors.$white;
+
+        border: none;
+        border-radius: 5px;
+
+        outline: none;
+        box-sizing: border-box;
+        margin-bottom: 6px;
+        position: relative;
+    }
+
+    .header__search-item {
+
+        & .dropdown-btn__container {
+            gap: 20px;
+
+            & .dropdown-btn__name {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+            }
+
+        }
+    }
+
+    .header__search-item--friend-label {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        font-size: 12px;
+        color: colors.$secondary_text;
+        text-align: start;
+        box-sizing: border-box;
+        gap: 10px;
+
+        .header__search-item--friend-online {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+            background-color: #2374e1;
+        }
+
+        .header__search-item--friend-online.online {
+            background-color: green; // Колір для онлайн
+          }
+    }
+
+    .header__search--avatar-icon {
+        width: 36px;
+        height: 36px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .header__search-dropdown--button {
+        width: 100%;
+        background-color: transparent;
+        color: colors.$gray_light-text;
+        display: flex;
+        justify-content: end;
+        gap: 20px;
+
+        &:hover {
+            background-color: colors.$link_hover;
+        }
+
+        .header__search-dropdown--button-icon {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+.header__search-item .dropdown-btn__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    width: 36px;
+    height: 36px;
+    box-sizing: content-box;
+
+    svg {
+        width: 36px;
+    }
+}

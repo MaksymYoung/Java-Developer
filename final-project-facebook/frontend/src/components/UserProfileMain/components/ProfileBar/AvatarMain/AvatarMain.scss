@@ -1,0 +1,39 @@
+@use "../../../../../styles/variables/colors.scss";
+
+.avatar__main {
+  position: relative;
+  width: 176px;
+  margin-right: 16px;
+
+  cursor: pointer;
+
+  @media (max-width: 899px) {
+    height: 88px;
+    margin: 0;
+  }
+}
+
+.avatar__viewport {
+  position: absolute;
+  bottom: 0;
+  font-size: 168px;
+  width: 1em;
+  height: 1em;
+
+  overflow: hidden;
+  border-radius: 50%;
+  border: 4px solid colors.$bg_brand;
+  background-color: colors.$bg_body;
+}
+
+.avatar__img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  display: block;
+
+  &:hover {
+    filter: brightness(1.15) contrast(0.85);
+  }
+}

@@ -1,0 +1,31 @@
+@use "../../../styles/variables/colors.scss";
+@use "../../../styles/variables/colorsFacebook.scss";
+
+.search-group-page-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 56.8px;
+}
+
+.search-group-aside {
+    max-width: 25%;
+    background-color: colors.$bg_brand;
+    border-right: 1px solid colorsFacebook.$gray_border;
+    &__title {
+        margin-bottom: 10px;
+    }
+}
+
+.search-group-main {
+    padding-top: 40px;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.search-group-message {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}

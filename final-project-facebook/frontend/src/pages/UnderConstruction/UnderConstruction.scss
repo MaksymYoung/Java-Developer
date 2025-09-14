@@ -1,0 +1,88 @@
+.under-construction-wrapper.no-button {
+    margin-top: -15px;
+}
+
+.under-construction-wrapper {
+    width: 100%;
+    min-height: 300px;
+    height: 100%;
+    margin-top: 67px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .construction-icon {
+        width: 25%;
+        height: 25%;
+    }
+
+    .error-title {
+        font-size: 20px;
+        font-weight: 700;
+        color: #b0b3b8;
+    }
+
+    .error-text {
+        margin-top: 8px;
+        width: 450px;
+        font-size: 20px;
+        font-weight: 700;
+        color: #b0b3b8;
+        text-align: center;
+    }
+
+    .error-button {
+        margin-top: 20px;
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .under-construction-wrapper {
+        width: 100%;
+        height: auto;
+        margin-top: 50px;
+
+        .construction-icon {
+            width: 200px;
+            height: 200px;
+        }
+
+        .error-title {
+            font-size: 17px;
+        }
+
+        .error-text {
+            margin-top: 8px;
+            width: 100%;
+            font-size: 17px;
+        }
+
+        .error-button {
+            margin-top: 15px;
+            font-size: 15px;
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .under-construction-wrapper {
+
+        .construction-icon {}
+
+        .error-title {
+            font-size: 15px;
+        }
+
+        .error-text {
+            font-size: 15px;
+        }
+
+        .error-button {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+    }
+}

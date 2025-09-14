@@ -1,0 +1,15 @@
+@use "../../../../styles/variables/colors.scss";
+
+.profile-bar {
+  display: flex;
+  width: 100%;
+
+  box-sizing: border-box;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid colors.$user-profile_border-line;
+
+  @media (max-width: 899px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}

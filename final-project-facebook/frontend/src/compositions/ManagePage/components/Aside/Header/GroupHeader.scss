@@ -1,0 +1,85 @@
+@use "../../../../../styles/variables/colorsFacebook.scss";
+
+.group-header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 5px;
+
+    .group-icon {
+        width: 60px;
+        height: 100%;
+        margin-left: 15px;
+        cursor: pointer;
+
+
+        .image {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .image:hover {
+            opacity: 0.9;
+        }
+    }
+
+    .group-short-info {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+        margin-left: 15px;
+        margin-right: 15px;
+
+        .name {
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            color: colorsFacebook.$white;
+            text-transform: capitalize;
+        }
+
+        .name:hover {
+            text-decoration: underline;
+        }
+
+        .info-block {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            align-items: center;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            color: colorsFacebook.$gray_light-text;
+
+            .group-status-lock {
+                width: 15px;
+                height: 15px;
+                margin-right: 5px;
+                fill: colorsFacebook.$gray_light-text;
+            }
+
+            .status {
+                margin-right: 15px;
+                font-size: 14px;
+                text-transform: capitalize;
+            }
+
+            .members {
+                font-size: 14px;
+                cursor: pointer;
+                text-transform: lowercase;
+            }
+
+            .members:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

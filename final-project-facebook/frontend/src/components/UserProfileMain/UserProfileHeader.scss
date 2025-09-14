@@ -1,0 +1,24 @@
+@use "../../styles/variables/colors.scss";
+@use "../../styles/variables/fonts.scss";
+
+.profile-header__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: fonts.$segoe;
+}
+
+.user-profile__inner-header {
+  width: 100%;
+
+  box-sizing: border-box;
+  padding: 0 2rem;
+
+  @media (min-width: 1219px) and (max-width: 1249px) {
+    padding: 0 1.5rem;
+  }
+  @media (max-width: 1218px) {
+    padding: 0 1rem;
+  }
+}

@@ -1,0 +1,27 @@
+@use "../../../styles/variables/colors.scss";
+@use "../../../styles/variables/colorsFacebook.scss";
+
+.aside-group-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    gap: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+
+    &:hover {
+        background-color: colors.$link_hover;
+    }
+
+    &__img {
+        width: 48px;
+        height: 48px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    &__active {
+        background-color: colors.$bg_veil;
+        border-radius: 0;
+    }
+}

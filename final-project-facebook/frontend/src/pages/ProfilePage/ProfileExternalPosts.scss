@@ -1,0 +1,92 @@
+.profile-page__container {
+  .under-construction-wrapper {
+    margin-top: 1rem;
+
+    .error-button {
+      display: none;
+    }
+  }
+
+  .feed-profile__fullname,
+  .feed-profile__datetime,
+  .feed-content__wrapper_text {
+    user-select: none;
+  }
+
+  .scroll-feed {
+    padding: 0rem 12rem;
+
+    @media (min-width: 1150px) and (max-width: 1249px) {
+      padding: 0rem 10rem;
+    }
+    @media (min-width: 1050px) and (max-width: 1149px) {
+      padding: 0rem 8rem;
+    }
+    @media (min-width: 1000px) and (max-width: 1049px) {
+      padding: 0rem 6rem;
+    }
+    @media (min-width: 900px) and (max-width: 999px) {
+      padding: 0rem 4rem;
+    }
+    @media (min-width: 769px) and (max-width: 899px) {
+      padding: 0;
+    }
+    @media (max-width: 767px) {
+      padding: 0;
+    }
+  }
+
+  .feed-list {
+    margin-top: 1rem;
+    
+    @media (max-width: 1249px) {
+      padding: 0;
+    }
+  }
+
+  .create-post {
+    box-shadow: none;
+
+    @media (min-width: 900px) and (max-width: 999px) {
+      margin-bottom: 1rem;
+    }
+    @media (min-width: 500px) and (max-width: 899px) {
+      margin-bottom: 0.75rem;
+    }
+    @media (max-width: 499px) {
+      border-radius: 0;
+      margin-bottom: 8px;
+    }
+  }
+
+  .feed-card {
+    box-shadow: none;
+    @media (max-width: 499px) {
+      border-radius: 0;
+    }
+  }
+
+  .create-post_comment {
+    margin-left: 0;
+  }
+
+  @media (max-width: 399px) {
+    .create-post {
+      padding: 16px 8px;
+    }
+    .feed-card {
+      padding: 16px 8px;
+    }
+    .create-post_comment {
+      margin-left: 8px;
+    }
+
+    .create-post_files__label {
+      word-break: normal;
+    }
+    .create-post_comment__input {
+      padding-left: 0;
+      margin-left: 8px;
+    }
+  }
+}

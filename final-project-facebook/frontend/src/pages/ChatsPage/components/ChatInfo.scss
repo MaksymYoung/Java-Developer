@@ -1,0 +1,70 @@
+@use "../../../styles/variables/colors.scss";
+@use "../../../styles/variables/colorsFacebook.scss";
+
+.chat-info {
+  text-align: center;
+  padding-top: 50px;
+  font-weight: 600;
+
+  &__name {
+    font-size: 18px;
+  }
+
+  &__members-wrapper {
+    margin-top: 30px;
+    text-align: left;
+    cursor: pointer;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    &:hover {
+      background-color: colors.$link_hover;
+    }
+    svg {
+      width: 20px;
+      height: 20px;
+      fill: #fff;
+    }
+  }
+
+  &__member {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 10px 15px;
+  }
+
+  &__member-img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &__tree-dots-wrapper {
+    position: relative;
+    margin-left: auto;
+  }
+
+  &__tree-dots {
+    border-radius: 50%;
+    padding: 8px;
+    cursor: pointer;
+    &:hover {
+      background-color: colors.$link_hover;
+    }
+  }
+
+  &__drop-down {
+    left: -400%;
+    right: -70%;
+    // right: 65px;
+    // top: 50%;
+    // transform: translate(30%, 50%);
+    &::before {
+      right: 21%;
+    }
+  }
+}

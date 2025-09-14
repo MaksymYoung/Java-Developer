@@ -1,0 +1,48 @@
+@use "../../styles/variables/colors.scss";
+
+.profile-page__outer {
+  width: 100%;
+  box-sizing: border-box;
+
+  .page__edit-wrapper {
+    margin: 0 auto 1rem;
+  }
+}
+
+.profile-page__user-header {
+  background-color: colors.$bg_brand;
+}
+
+.profile-page__wrapper {
+  max-width: 1250px;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  &.user-box {
+    padding: 0 2rem;
+
+    @media (min-width: 1219px) and (max-width: 1249px) {
+      .user-profile__inner-header {
+        padding: 0 1.5rem;
+      }
+    }
+    @media (min-width: 500px) and (max-width: 1218px) {
+      padding: 0 1rem;
+    }
+    @media (max-width: 499px) {
+      padding: 0;
+    }
+  }
+}
+
+.profile-page__inner {
+  box-sizing: border-box;
+
+  @media (min-width: 900x) {
+    min-height: 1024px;
+    padding: 0 2rem;
+  }
+  @media (max-width: 899x) {
+    padding: 0;
+  }
+}

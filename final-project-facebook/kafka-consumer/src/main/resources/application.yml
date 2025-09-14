@@ -1,0 +1,52 @@
+spring:
+  config:
+    import: optional:file:./kafka-consumer/.env[.properties]
+
+  security:
+    jwt:
+      secret: ${JWT_SECRET}
+
+  kafka:
+    consumer:
+      bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS}
+      group-id: consumer
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    topics:
+      feed_changes: feed_changes
+      like_changes: like_changes
+      comment_changes: comment_changes
+      friend_changes: friend_changes
+      group_changes: group_changes
+
+  datasource:
+    url: jdbc:postgresql://${HOST}:5432/${POSTGRES_DATABASE}?currentSchema=${POSTGRES_SCHEMA}
+    username: ${POSTGRES_USERNAME}
+    password: ${POSTGRES_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+
+  liquibase:
+    change-log: classpath:liquibase/db.changelog.yaml
+    enabled: true
+    default-schema: ${POSTGRES_SCHEMA}
+
+  application:
+    name: kafka-consumer
+
+server:
+  port: ${APP_PORT}
+gateway:
+  url: ${GATEWAY_URL}
+
+logging:
+  level:
+    root: ERROR

@@ -1,0 +1,31 @@
+@use "../../styles/variables/colors.scss";
+
+.search {
+  height: 36px;
+  width: auto;
+  border-radius: 50px;
+  background-color: colors.$bg-input;
+  display: flex;
+  align-items: center;
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  &__input {
+    font-size: 14px;
+    font-weight: 400;
+    background-color: transparent;
+    width: 280px;
+    height: 100%;
+    color: rgba(colors.$white, colors.$text-opacity);
+    border: none;
+    outline: none;
+  }
+  &__input:-webkit-autofill {
+    -webkit-transition-delay: 99999s;
+}
+}

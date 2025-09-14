@@ -1,0 +1,12 @@
+@use "../../../../styles/variables/colorsFacebook.scss";
+
+.block-wrapper {
+    padding-top: 56.8px;
+    min-height: 100vh;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}

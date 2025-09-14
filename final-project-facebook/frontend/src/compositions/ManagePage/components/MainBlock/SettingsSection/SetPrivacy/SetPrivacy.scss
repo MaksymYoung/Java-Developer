@@ -1,0 +1,95 @@
+@use "../../../../../../styles/variables/colorsFacebook.scss";
+.set-privacy-wrapper{
+    width: 100%;
+    height: auto;
+
+    .item-title {
+        font-size: 20px;
+    }
+}
+.item-privacy {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    .group-status-lock {
+        width: 15px;
+        height: 15px;
+    }
+
+    .set-group-privacy {
+        width: 20px;
+        height: 20px;
+    }
+
+    .privacy-wrapper {
+        width: 100%;
+        height: auto;
+        padding: 5px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 7px;
+        gap: 10px;
+
+        .privacy-icon {
+            min-width: 35px;
+            width: 34px;
+            height: 34px;
+            background-color: colorsFacebook.$gray_border;
+            border-radius: 17px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .icon {
+                width: 18px;
+                height: 18px;
+                fill: colorsFacebook.$white;
+            }
+        }
+
+        .privacy-text-array {
+            width: 80%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: start;
+           
+
+            .title {
+                font-size: 20px;
+            }
+            .text {
+                font-size: 12px;  
+                color: colorsFacebook.$gray_light-text;
+            }
+        }
+    }
+    .privacy-wrapper:hover {
+        background-color: colorsFacebook.$gray_border;
+    }
+    .public-attention {
+        width: 100%;
+        height: auto;
+        margin-left: -5px;
+        padding: 5px 2.5px;
+        font-size: 15px;
+        color: colorsFacebook.$gray_light-text;
+        background-color: colorsFacebook.$gray_background;
+        border-radius: 4px;
+        p {
+            margin: 5px;
+        }
+
+        span {
+            color: colorsFacebook.$white;
+        }
+    }
+
+}

@@ -1,0 +1,54 @@
+#logging:
+#  level:
+#    org.springframework.boot: DEBUG
+#    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+#  jpa:
+#    show-sql: true
+#    properties:
+#      hibernate:
+#        format_sql: true
+
+spring:
+  security:
+    jwt:
+      secret: ${JWT_SECRET}
+      access:  300000 # 5 м
+      refresh: 2592000000 # 30
+  config:
+    import: optional:file:./newsfeed/.env[.properties]
+  datasource:
+    url: jdbc:postgresql://${HOST}:5432/${POSTGRES_DATABASE}?currentSchema=${POSTGRES_SCHEMA}
+    username: ${POSTGRES_USERNAME}
+    password: ${POSTGRES_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      minimum-idle: 3       # Минимальное количество ожидающих (неактивных) соединений
+      maximum-pool-size: 5   # Максимальное количество активных соединений в пуле
+      idle-timeout: 300000   # Время в миллисекундах, по истечении которого неактивное соединение будет закрыто (5 минут)
+      max-lifetime: 1200000  # Максимальное время жизни соединения в миллисекундах (20 минут)
+      connection-timeout: 20000 # Максимальное время ожидания получения соединения из пула в миллисекундах (20 секунд)
+#  kafka:
+#    producer:
+#      bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS}
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+#    topics:
+#      feed_changes: feed_changes
+#      like_changes: like_changes
+#      comment_changes: comment_changes
+
+  liquibase:
+    change-log: classpath:liquibase/db.changelog.yaml
+    enabled: true
+    default-schema: ${POSTGRES_SCHEMA}
+  application:
+    name: news-feed
+minio:
+  bucket: ${MINIO_BUCKET}
+  url: ${MINIO_URL}
+  accessKey: ${MINIO_ACCESS_KEY}
+  secretKey: ${MINIO_SECRET_KEY}
+server:
+  port: ${APP_PORT}
+gateway:
+    url: ${GATEWAY_URL}

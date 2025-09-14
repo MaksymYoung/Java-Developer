@@ -1,0 +1,334 @@
+@use "../../styles/variables/colors.scss";
+@use "../../styles/base/general.scss";
+@use "../../styles/variables/colorsFacebook.scss";
+
+.chats-page-wrapper {
+  display: flex;
+  justify-content: space-between;
+  height: calc(100vh - 56.8px);
+  overflow-y: hidden;
+  font-family: "Segoe UI", Arial, sans-serif;
+  padding-top: 56.8px;
+  position: relative;
+  .burger-chats {
+        position: fixed;
+        top: 141.6px;
+        left: 30px;
+        display: flex;
+  }
+  &>.aside-chat-mob {
+    position: fixed;
+    top: 200px;
+    left: 30px;
+    background-color: colors.$bg_body;
+    border-radius: 13px;
+    overflow: auto;
+    min-height: 0;
+    max-height: calc(100vh - 290px);
+    width: 300px;
+  }
+  
+  .aside-chat {
+    width: 27%;
+    flex: 0;
+    padding: 0;
+    background-color: colors.$bg_brand;
+  }
+}
+
+.feed-chats {
+  display: block;
+  color: colors.$white;
+  background-color: colors.$bg_brand;
+  border: 1px solid colorsFacebook.$gray_border;
+  border-top: none;
+  padding: 0;
+  .send-message-wrapper {
+    height: 60px;
+  }
+}
+
+.chats-title-icon-list {
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.chats-title-wrapper {
+  padding: 15px 20px;
+  .search {
+    svg {
+      min-height: 16px;
+      min-width: 16px;
+    }
+  }
+}
+
+.chats-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.chats-title-icon-list {
+  display: flex;
+  gap: 12px;
+}
+
+.chats-title-icon-item {
+  padding: 8px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  height: 36px;
+  cursor: pointer;
+  background-color: colors.$link_hover;
+  &:hover {
+    background-color: colors.$bg_light-gray;
+  }
+}
+
+.feed-chats-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 0 20px;
+
+  &__label {
+    padding-right: 5px;
+  }
+
+  &__input {
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 5px;
+    box-sizing: border-box;
+    outline: none;
+  }
+
+  &__members {
+    display: flex;
+    gap: 5px;
+    cursor: pointer;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 12px;
+  }
+
+  &__actions-item {
+    cursor: pointer;
+    padding: 7px;
+    height: 38px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    &:hover {
+      background-color: colors.$link_hover;
+    }
+    svg {
+      fill: colors.$icon_blue;
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.message-container {
+  height: calc(100% - 64.8px - 56px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 30px 20px 0 20px;
+  box-sizing: border-box;
+
+  &__info-wrapper {
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  &__desc {
+    padding: 20px 0;
+    font-size: 13px;
+  }
+
+  &__icon-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  &__icon-item {
+
+    svg {
+
+      height: 20px;
+      width: 20px;
+      fill: white;
+    }
+  }
+
+  &__icon-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &>.svg-wrapper {
+        padding: 8px;
+        border-radius: 50%;
+        box-sizing: border-box;
+        height: 36px;
+        width: 36px;
+        cursor: pointer;
+        background-color: colors.$link_hover;
+        &:hover {
+            background-color: colors.$bg_light-gray;
+          }
+    }
+    &>.svg-info {
+        padding-top: 5px;
+    }
+  }
+}
+
+.group-chats-wrapper {
+    height: calc(100vh - 114px - 56.8px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    padding: 5px 10px;
+}
+
+.group-chat-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  &__item-wrapper {
+    max-width: 50%;
+  }
+  .chat-group-owner {
+    align-self: flex-end;
+    .group-chat-messages__item-message {
+      text-align: end;
+      background-color: colorsFacebook.$blue_facebook;
+    }
+    .group-chat-messages__item-info {
+      flex-direction: row-reverse;
+    }
+
+  }
+  .chat-group-owner-name {
+    text-align: end;
+    padding-left: 0;
+    padding-right: 45px;
+  }
+
+  &__item-name {
+    padding-left: 45px;
+    font-size: 12px;
+    font-weight: 400;
+    color: rgb(176, 179, 184);
+  }
+
+  &__item-message {
+    background-color: rgb(48, 48, 48);
+        
+    display: inline-block;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 20px;
+  }
+  &__item-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+    align-self: end;
+  }
+  &__item-info {
+    display: flex;
+    gap: 8px;
+    margin-top: 5px;
+  }
+}
+
+.send-message {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 5px;
+
+  svg {
+    fill: colorsFacebook.$blue_facebook;
+    width: 24px;
+    height: 24px;
+  }
+
+  &__icons {
+    display: flex;
+    align-items: center;
+    
+  }
+
+  &__icons-item {
+    padding: 6px;
+    border-radius: 50%;
+    height: 36px;
+    box-sizing: border-box;
+    cursor: pointer;
+    &:hover {
+      background-color: colors.$link_hover;
+    }
+  }
+
+  &__input {
+    height: 36px;
+    flex-grow: 1;
+    background-color: colors.$link_hover;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+    box-sizing: border-box;
+    color: colors.$white;
+  }
+}
+
+.aside-info {
+  background-color: colors.$bg_brand;
+  overflow-y: auto;
+}
+
+@media screen and (max-width: 1200px) {
+  .aside-chat {
+    flex: 1;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .feed-chats {
+    .message-container {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  }
+  .aside-chat {
+    display: none;
+  }
+  .group-chat__drop-down {
+    left: 47px;
+    right: 37px;
+    &::before {
+      right: 24%;
+    }
+  }
+  .group-chats-wrapper {
+    height: fit-content;
+    overflow-y: visible;
+    overflow-x: visible;
+  }
+}

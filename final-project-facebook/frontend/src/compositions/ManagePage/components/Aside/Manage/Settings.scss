@@ -1,0 +1,117 @@
+@use "../../../../../styles/variables/colorsFacebook.scss";
+
+.settings-wrapper {
+    user-select: none;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 10px;
+    margin-left: 10px;
+
+    .settings-item-aside {
+        width: 100%;
+        height: 100%;
+        color: colorsFacebook.$white;
+        border-radius: 7px;
+        padding: 10px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: start;
+
+        .item-aside-btn {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            align-items: center;
+            gap: 10px;
+
+            .gear-icon {
+                width: 20px;
+                height: 20px;
+                fill: colorsFacebook.$white;
+            }
+            .friend-add-icon {
+                width: 22px;
+                height: 22px;
+                fill: colorsFacebook.$white;
+            }
+        }
+
+        .home-btn-block {
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            align-items: center;
+            gap: 10px;
+
+            svg {
+                width: 20px;
+                height: 20px;
+                
+            }
+        }
+
+        .setting-group-name {
+            width: auto;
+            height: auto;
+        }
+
+        .activeBlue {
+            color: colorsFacebook.$blue_facebook;
+        }
+
+        .setting-info {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            color: colorsFacebook.$gray_light-text;
+            font-size: 0.75em;
+
+            .status-icon {}
+
+            .group-status-lock {
+                width: 15px;
+                height: 15px;
+                margin-right: 5px;
+                fill: colorsFacebook.$gray_light-text;
+            }
+
+            .status-current {
+                margin-left: 10px;
+            }
+
+            .number {}
+
+            .text {
+                margin-left: 10px;
+            }
+        }
+    }
+
+    .settings-item-aside:hover {
+        background-color: colorsFacebook.$gray_background-input;
+    }
+
+    .settings-item-aside.home-btn:hover {
+        background-color: colorsFacebook.$dark-blue_bacground-manage;
+    }
+
+    .settings-item:hover {
+        background-color: colorsFacebook.$gray_border;
+    }
+
+    .settings-item-aside.activeBlue {
+        background-color: colorsFacebook.$dark-blue_bacground-manage;
+        .item-aside-btn svg {
+            fill: colorsFacebook.$blue_facebook;
+        }
+    }
+}

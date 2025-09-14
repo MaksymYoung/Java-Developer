@@ -1,0 +1,56 @@
+@import "../../styles/variables/colors.scss";
+
+.modal__wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $bg_veil;
+    overflow: auto; // Додаємо можливість прокрутки, якщо вміст перевищує висоту екрана
+}
+
+.modal__box {
+    padding: 20px 40px;
+    color: $gen;
+    text-align: center;
+    background-color: $bg_brand;
+    box-sizing: border-box;
+    border-radius: 6px;    
+    box-shadow: 0px 0px 6px 0 $secondary_btn_bg;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    position: relative;
+    max-height: 90vh; // Максимальна висота, щоб вміст не виходив за межі вікна
+    overflow-y: auto; // Додаємо вертикальну прокрутку
+
+    & .modal__close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: transparent;
+        border-color: transparent;
+        color: $gray_light-text;
+        cursor: pointer;
+    }
+
+    @media (max-width: 1024px) {
+        padding: 12px 20px;    
+    }
+
+    @media (max-width: 620px) {
+        padding: 14px;
+        width: 100%;
+        margin: 14px;
+    }
+}
+
+.modal__box.light-theme {
+    background-color: $white;    
+    box-shadow: 0px 0px 6px 0 $gray_light-text;
+}

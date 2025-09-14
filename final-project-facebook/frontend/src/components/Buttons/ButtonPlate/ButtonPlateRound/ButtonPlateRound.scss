@@ -1,0 +1,89 @@
+@use "../../../../styles/variables/colors.scss";
+
+.icon-position {
+  width: 60px;
+  display: flex;
+
+  justify-content: end;
+  align-items: center;
+}
+
+.btn-plate__round {
+  font-size: 36px;
+  width: 1em;
+  height: 1em;
+
+  background-color: colors.$secondary_btn_bg;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: none;
+
+  cursor: pointer;
+}
+
+.btn-plate__round.edit {
+  position: relative;
+}
+
+.btn-plate__round.camera {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+}
+
+.btn-plate__round:hover {
+  background-color: colors.$secondary_btn_bg_hover;
+
+  .icon__element.camera {
+    fill: colors.$icon-camera_hover;
+  }
+  .icon__element.camera path.lens,
+  .icon__element.camera circle {
+    fill: colors.$secondary_btn_bg_hover;
+  }
+}
+
+.btn-plate__round.edit:active {
+  font-size: 32px;
+  width: 1em;
+  height: 1em;
+
+  .icon__edit-pen {
+    font-size: 22px;
+    width: 1em;
+    height: 1em;
+  }
+}
+
+.btn-plate__round.camera:active {
+  transform: scale(0.9);
+}
+
+.icon__element {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.icon__element.edit-pen {
+  font-size: 25px;
+  width: 1em;
+  height: 1em;
+
+  fill: none;
+  stroke: colors.$white;
+}
+
+.icon__element.camera {
+  font-size: 20px;
+  width: 1em;
+  height: 1em;
+
+  fill: colors.$icon-camera_shell;
+
+  path.lens,
+  circle {
+    fill: colors.$secondary_btn_bg;
+  }
+}

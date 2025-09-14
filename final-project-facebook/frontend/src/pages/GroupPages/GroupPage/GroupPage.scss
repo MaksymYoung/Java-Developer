@@ -1,0 +1,452 @@
+@use "../../../styles/variables/colors.scss";
+@use "../../../styles/variables/colorsFacebook.scss";
+
+.group-page-wrapper {
+  user-select: none;
+  width: 100%;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: colors.$white;
+
+  .group-page-header {
+    background: linear-gradient(0deg,
+        rgba(36, 37, 38, 1) 50%,
+        rgba(255, 255, 255, 1) 100%);
+    padding: 0 40px;
+
+    @media screen and (max-width: 1200px) {
+      padding: 0;
+    }
+
+    &__edit {
+      position: absolute;
+      content: "";
+      bottom: 20px;
+      right: 40px;
+      z-index: 3;
+
+      .input-file {
+        position: absolute;
+        // left: -9999px;
+        opacity: 0;
+        width: 0;
+        height: 0;
+        pointer-events: none;
+      }
+    }
+
+    &__img-link {
+      position: relative;
+
+      .btn-edit-group {
+        position: static;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 0 12px;
+        height: 36px;
+        background-color: rgba(255, 255, 255, 0.3);
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.4);
+        }
+
+        svg {
+          width: 16px;
+          height: 16px;
+          fill: white;
+          filter: invert(10%);
+        }
+
+        &__text {
+          color: white;
+          filter: invert(10%);
+        }
+      }
+
+    }
+
+    @media screen and (max-width: 600px) {
+      &__img-link {
+        .btn-edit-group {
+          gap: 8px;
+          padding: 0 8px;
+          height: 28px;
+        }
+      }
+    }
+
+    &__img {
+      object-fit: cover;
+      height: 400px;
+      width: 100%;
+      display: block;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+
+    @media screen and (max-width: 600px) {
+      &__img {
+        height: auto;
+      }
+    }
+
+    &__info-wrapper {
+      padding: 25px 25px 0 25px;
+
+      button {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        height: 36px;
+        font-size: 15px;
+        padding-left: 12px;
+        padding-right: 12px;
+        font-weight: 500;
+
+        svg {
+          width: 16px;
+          height: 16px;
+          fill: colors.$white;
+          stroke: colors.$white;
+        }
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      &__info-wrapper {
+        padding: 15px 5px 0 5px;
+      }
+    }
+
+    &__title {
+      font-size: 28px;
+      font-weight: 700;
+      display: inline-block;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      &__title {
+        font-size: 24px;
+      }
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-bottom: 20px;
+      border-bottom: 1px solid colorsFacebook.$gray_border;
+
+      .drop-down::before {
+        right: 35%;
+      }
+
+      .drop-down {
+        width: 200px;
+
+        .dropdown-btn {
+          .dropdown-btn__container {
+            .dropdown-btn__name {}
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      &__info {
+
+        .drop-down::before {
+          right: 45%;
+        }
+
+        .drop-down {
+          width: 170px;
+
+          .dropdown-btn {
+            padding: 4px 2px;
+
+            .dropdown-btn__container {
+              .dropdown-btn__name {
+                font-size: 13px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 460px) {
+      &__info {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .drop-down {
+
+          .dropdown-btn {
+            .dropdown-btn__container {
+              .dropdown-btn__name {
+                font-size: 13px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &__desc-wrapper {
+      flex-grow: 1;
+      font-size: 15px;
+      font-weight: 600;
+      width: 100%;
+    }
+
+    @media screen and (max-width: 940px) {
+      &__desc-wrapper {
+        font-size: 14px;
+      }
+    }
+
+    &__desc {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+      font-weight: 400;
+    }
+
+    .three-dots-dropdown {
+      left: -200%;
+
+      &::before {
+        right: 38%;
+      }
+    }
+
+
+    &__type {
+      position: relative;
+      padding-right: 12px;
+
+      .type {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        svg {
+          height: 12px;
+          width: 12px;
+          fill: #ffffff;
+        }
+      }
+
+      &::after {
+        content: ".";
+        position: absolute;
+        bottom: 5px;
+        right: 4px;
+        font-size: 10px;
+      }
+    }
+
+    &__members {
+      color: colors.$white;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &__members-img {
+      height: 36px;
+      width: 100%;
+    }
+
+    &__actions {
+      align-self: end;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .fb-button {
+        span {
+          white-space: nowrap;
+        }
+      }
+
+      .downArrow-filled {
+        width: 10px;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      &__actions {
+        gap: 3px;
+
+        button {
+          gap: 4px;
+          height: 30px;
+          padding-left: 3px;
+          padding-right: 3px;
+
+          span {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+
+    &__joined {
+      position: relative;
+    }
+
+    &__nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 3px 0;
+    }
+
+    &__nav-list {
+      display: flex;
+    }
+
+    &__nav-item {}
+
+    &__nav-link {
+      display: inline-block;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 18px 15px;
+      border-radius: 5px;
+      color: colors.$white;
+      cursor: pointer;
+
+      &:hover {
+        background-color: colors.$link_hover;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      &__nav-link {
+        font-size: 15px;
+        padding: 8px 8px;
+      }
+    }
+
+    @media screen and (max-width: 460px) {
+      &__nav-link {
+        font-size: 12px;
+        padding: 7px 6px;
+      }
+    }
+
+    &__three-dots {
+      position: relative;
+    }
+
+    .group-nav-active {
+      position: relative;
+      border-radius: 0;
+      color: #2374e1;
+
+      &::after {
+        position: absolute;
+        content: "";
+        border-bottom: 2px solid #2374e1;
+        bottom: -3px;
+        width: 100%;
+        left: 0;
+      }
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+
+    &__nav-btn {
+      display: flex;
+      gap: 8px;
+
+      &>button {
+        height: 36px;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      &__nav-btn {
+        display: none;
+      }
+    }
+  }
+
+  .group-page-aside {
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .group-page-main {
+    width: 100%;
+    padding: 16px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    justify-content: space-between;
+    background-color: colors.$bg_veil;
+    min-height: 100vh;
+
+    .group-page-feed {
+      width: 90%;
+
+      @media screen and (max-width: 1200px) {
+        width: 100%;
+      }
+    }
+
+    .group-page-about {
+      width: 90%;
+      padding: 16px;
+      border-radius: 10px;
+      background-color: colors.$bg_brand;
+
+      &__title {
+        font-size: 17px;
+        font-weight: 600;
+        padding-bottom: 15px;
+      }
+
+      &__about {
+        padding-bottom: 15px;
+      }
+
+      &__grouptype-wrapper {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+
+        svg {
+          height: 20px;
+          width: 20px;
+          fill: #ffffff;
+        }
+      }
+
+      &__grouptype-desc {
+        font-size: 15px;
+        font-weight: 400;
+        padding: 5px 0 12px 30px;
+      }
+    }
+  }
+}

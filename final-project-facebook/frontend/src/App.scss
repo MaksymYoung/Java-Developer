@@ -1,0 +1,12 @@
+.page-wrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.main-content {
+  width: 100%;
+  min-height: 100vh;
+}

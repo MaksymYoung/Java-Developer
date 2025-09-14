@@ -1,0 +1,85 @@
+@use "../../../../styles/variables/colors.scss";
+@use "../../../../styles/variables/colorsFacebook.scss";
+
+.group-create-post {
+    
+    background-color: colors.$bg_brand;
+    border-radius: 10px;
+    &__input-wrapper {
+        padding: 12px 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 5px;
+    }
+
+    &__input {
+        flex-grow: 1;
+        font-size: 17px;
+        color: colors.$white;
+        height: 40px;
+        border-radius: 30px;
+        background-color: colors.$bg-input;
+        border: none;
+        outline: none;
+        padding-left: 15px;
+    }
+
+    &__img {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+    }
+
+    &__icons-wrapper {
+        padding: 0 16px;
+    }
+    .divider {
+        margin: 0 16px;
+        border-bottom: 1px solid colorsFacebook.$gray_border;
+    }
+
+    &__list {
+        padding: 8px 16px 10px 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__item {
+        width: calc(100%/3);
+    }
+
+    &__btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        cursor: pointer;
+        gap: 10px;
+        padding: 8px;
+        font-family: "Segoe UI", Arial, sans-serif;
+        font-size: 15px;
+        font-weight: 600;
+        color: colors.$white;
+        background-color: transparent;
+        outline: none;
+        border: none;
+        border-radius: 10px;
+        &:hover {
+            background-color: colors.$link_hover;
+        }
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+        .poll {
+            background-color: orange;
+            border-radius: 50%;
+            box-sizing: border-box;
+            padding: 3px;
+        }
+        .photo-video {
+            fill: #0fc615;
+        }
+    }
+}

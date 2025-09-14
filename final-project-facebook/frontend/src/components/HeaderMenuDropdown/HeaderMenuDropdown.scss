@@ -1,0 +1,10 @@
+
+
+.header-menu-dropdown {
+    width: 270px;
+    top: 45px;
+    left: -200%;
+    &::before {
+        display: none;
+    }
+}

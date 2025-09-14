@@ -1,0 +1,21 @@
+version: '3'
+
+networks:
+  app-network:
+    driver: bridge
+
+services:
+  app:
+    build:
+      context: .
+    container_name: friends
+    networks:
+      - app-network
+    environment:
+      - HOST=danit-facebook-project.cdw0cecwmddw.us-east-1.rds.amazonaws.com
+      - POSTGRES_USERNAME=postgres
+      - POSTGRES_PASSWORD=danit-final-project-2024
+      - POSTGRES_DATABASE=friends
+      - POSTGRES_SCHEMA=friends
+    ports:
+      - '8095:8095'

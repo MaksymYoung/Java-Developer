@@ -1,0 +1,507 @@
+@use "../../../styles/variables/colorsFacebook.scss";
+@use "../../../styles/variables/colors.scss";
+
+.modal__box.modal-box {
+    padding: 0;
+    height: 100%;
+}
+
+.modal-box {
+    width: 50%;
+    min-height: 300px;
+    height: 100%;
+
+    .invite-friend-modal-wrapper {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .invite-friend-modal-header {
+            margin-bottom: 10px;
+            padding: 10px 0px 10px 0px;
+            width: 100%;
+            max-height: 30px;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+
+            p {
+                margin-right: 40px;
+                margin-bottom: -20px;
+                font-size: 20px;
+                color: colors.$white;
+
+            }
+
+            .close-icon-wrapper {
+                cursor: pointer;
+                right: -7px;
+                top: -10px;
+                transform: translate(-50%, 50%);
+                position: absolute;
+                width: 33px;
+                height: 33px;
+                border-radius: 16.5px;
+                background-color: colorsFacebook.$gray_background-input;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                svg {
+                    width: 15px;
+                    height: 15px;
+                    fill: colorsFacebook.$gray_light-text;
+                }
+            }
+        }
+
+        .invite-friend-modal-main {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            .aside-left {
+                padding-top: 20px;
+                padding-left: 10px;
+                width: 60%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: start;
+                gap: 5px;
+                color: colors.$white;
+
+                .search {
+                    max-width: 97%;
+                    width: 100%;
+
+                    input {
+                        width: 100%;
+                    }
+                }
+
+                .friends-list {
+                    margin-left: 5px;
+                    max-width: 95%;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: start;
+                    align-items: start;
+                    gap: 5px;
+
+                    max-height: calc(70px * 5);
+                    /* максимальна висота для списку друзів*/
+                    overflow-y: auto;
+                    /* вертикальний скрол */
+                    padding-right: 1px;
+                    /* щоб скрол не перекривав контент */
+
+                    &::-webkit-scrollbar {
+                        width: 12px;
+                        /* Ширина скролбару */
+                    }
+
+                    &::-webkit-scrollbar-track {
+                        /* скрол фон і рамка */
+                        background: colors.$border_input_primary;
+                        border-radius: 6px;
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                        /* бігунок скролу фон і рамка для контрасту*/
+                        background-color: colors.$bg_light-gray;
+                        border-radius: 6px;
+                        border: 2px solid colors.$border_input_primary;
+                    }
+
+                    &::-webkit-scrollbar-thumb:hover {
+                        /* ховер для бігунка */
+                        background-color: colors.$secondary_btn_bg_hover;
+                    }
+
+                    .friend-item-wrapper {
+                        max-width: 95%;
+                        width: 100%;
+                        max-height: 50px;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        .friend-box {
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: start;
+                            align-items: center;
+
+                            .friend-icon {
+                                margin-right: 7px;
+                                width: 40px;
+                                height: 40px;
+                                border-radius: 20px;
+                                background-color: colorsFacebook.$gray_background-input;
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: center;
+                                align-items: center;
+
+                                .user-img {
+                                    width: 100%;
+                                    height: 100%;
+                                    border-radius: 35px;
+                                    object-fit: cover;
+                                }
+
+                                svg {
+                                    margin-left: 1px;
+                                    width: 20px;
+                                    height: 25px;
+                                    fill: colorsFacebook.$gray_light-text;
+                                }
+                            }
+
+                            .friend-item {
+                                font-size: 16px;
+                            }
+                        }
+
+                        .selector {
+                            cursor: pointer;
+                            max-width: 30px;
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: center;
+                            align-items: center;
+
+                            svg {
+                                width: 24px;
+                                height: 24px;
+                                stroke: colorsFacebook.$gray_light-text;
+                            }
+
+                            .selector-check {
+                                width: 30px;
+                                height: 24px;
+                                position: relative;
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: center;
+                                align-items: center;
+
+                                .square {}
+
+                                .check {
+                                    width: 15px;
+                                    height: 15px;
+                                    position: absolute;
+                                    top: 20%;
+                                    left: 23%;
+                                    stroke: colorsFacebook.$gray_light-text;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .aside-right {
+                max-width: 40%;
+                width: 100%;
+                height: 100%;
+                padding-left: 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+                align-items: center;
+                background-color: colors.$bg_body;
+
+                p {
+                    text-transform: uppercase;
+                }
+
+                .friends-list {
+                    width: 99%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: start;
+                    align-items: start;
+                    gap: 5px;
+
+                    max-height: calc(80px * 5);
+                    /* максимальна висота для списку друзів*/
+                    overflow-y: auto;
+                    /* вертикальний скрол */
+                    padding-right: 1px;
+                    /* щоб скрол не перекривав контент */
+
+                    &::-webkit-scrollbar {
+                        width: 12px;
+                        /* Ширина скролбару */
+                    }
+
+                    &::-webkit-scrollbar-track {
+                        /* скрол фон і рамка */
+                        background: colors.$border_input_primary;
+                        border-radius: 6px;
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                        /* бігунок скролу фон і рамка для контрасту*/
+                        background-color: colors.$bg_light-gray;
+                        border-radius: 6px;
+                        border: 2px solid colors.$border_input_primary;
+                    }
+
+                    &::-webkit-scrollbar-thumb:hover {
+                        /* ховер для бігунка */
+                        background-color: colors.$secondary_btn_bg_hover;
+                    }
+
+                    .friend-item-wrapper {
+                        max-width: 95%;
+                        width: 100%;
+                        max-height: 50px;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        .friend-box {
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: start;
+                            align-items: center;
+
+                            .friend-icon {
+                                margin-right: 7px;
+                                width: 40px;
+                                height: 40px;
+                                border-radius: 20px;
+                                background-color: colorsFacebook.$gray_background-input;
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: center;
+                                align-items: center;
+
+                                .user-img {
+                                    width: 100%;
+                                    height: 100%;
+                                    border-radius: 35px;
+                                    object-fit: cover;
+                                }
+
+                                svg {
+                                    margin-left: 1px;
+                                    width: 20px;
+                                    height: 25px;
+                                    fill: colorsFacebook.$gray_light-text;
+                                }
+                            }
+
+                            .friend-item {
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .invite-friend-modal-footer {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            margin-right: 20px;
+            width: 100%;
+            max-height: 40px;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+            align-items: center;
+            gap: 30px;
+
+            .fb-blue.save.active {
+                background-color: colorsFacebook.$blue_facebook;
+                color: colors.$white;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .modal-box {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .modal-box {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .modal-box {
+        width: 90%;
+
+        .invite-friend-modal-wrapper {
+            .invite-friend-modal-main {
+                .aside-left {
+                    width: 60%;
+
+                    .friends-list {
+                        .friend-item-wrapper {
+                            .friend-box {
+                                .friend-item {}
+                            }
+                        }
+                    }
+                }
+
+                .aside-right {
+                    max-width: 40%;
+                    width: 100%;
+
+                    .friends-list {
+                        .friend-item-wrapper {
+                            .friend-box {
+
+                                .friend-item {
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .modal-box {
+        width: 100%;
+
+        .invite-friend-modal-wrapper {
+            .invite-friend-modal-main {
+                .aside-left {
+
+                    .friends-list {
+
+                        .friend-item-wrapper {
+                            max-width: 100%;
+
+                            .friend-box {
+                                .friend-icon {
+                                    display: none;
+                                }
+
+                                .friend-item {
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .aside-right {
+                    .friends-list {
+                        .friend-item-wrapper {
+                            max-height: 40px;
+
+                            .friend-box {
+                                .friend-icon {
+                                    display: none;
+                                }
+
+                                .friend-item {}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .modal-box {
+        width: 100%;
+
+        .invite-friend-modal-wrapper {
+            .invite-friend-modal-main {
+                .aside-left {
+
+                    .friends-list {
+                        max-height: calc(45px * 5);
+
+                        .friend-item-wrapper {
+
+                            .friend-box {
+                                .friend-icon {
+                                    display: none;
+                                }
+
+                                .friend-item {
+                                    font-size: 11px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .aside-right {
+                    .friends-list {
+                        max-height: calc(55px * 5);
+                        .friend-item-wrapper {
+                            .friend-box {
+                                .friend-icon {
+                                    display: none;
+                                }
+
+                                .friend-item {
+                                    font-size: 11px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.underline {
+    width: 100%;
+    margin: 0 40px;
+    border-bottom: 1px solid colorsFacebook.$gray_border;
+}
+
+.upperline {
+    width: 100%;
+    margin: 0 40px;
+    border-bottom: 1px solid colorsFacebook.$gray_border;
+}

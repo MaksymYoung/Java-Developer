@@ -1,0 +1,32 @@
+@use "../../styles/variables/colors.scss";
+@use "../../styles/variables/colorsFacebook.scss";
+
+.drop-down {
+  position: absolute;
+  content: "";
+  display: flex;
+  flex-direction: column;
+  top: 130%;
+  right: -100%;
+  left: -100%;
+  padding: 6px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: colors.$bg_brand;
+  box-shadow: 5px 5px 5px colors.$bg_veil, 0px -2px 5px colors.$bg_veil;
+  z-index: 1000;
+}
+
+.drop-down::before {
+  content: "";
+  position: absolute;
+  right: 50%;
+  transform: translateX(100%);
+  top: -18px;
+  width: 0;
+  height: 0;
+  border-right: 25px solid transparent;
+  border-bottom: 20px solid colors.$bg_brand;
+}
+
+

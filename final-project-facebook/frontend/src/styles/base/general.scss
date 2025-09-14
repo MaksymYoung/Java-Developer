@@ -1,0 +1,28 @@
+@use "../variables/colors.scss";
+@use "../variables/fonts.scss";
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  width: 100%;
+  height: auto;
+
+  font-family: fonts.$font-family-facebook;
+  font-size: 16px;
+  font-weight: 400;
+  color: colors.$primary_text;
+  font-style: normal;
+  line-height: normal;
+
+  background-color: colors.$bg_body;
+}
+
+#root {
+  width: 100%;
+  margin: 0 auto;
+}

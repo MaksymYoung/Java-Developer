@@ -1,0 +1,21 @@
+@use "../../styles/variables/colors.scss";
+
+  .profile-page-friend__container {
+  
+    &.user-header {
+      margin-bottom: 1rem;
+      background-color: colors.$bg_brand;
+    }
+  }
+  
+  .profile-page-friend__wrapper {
+    max-width: 1250px;
+    margin: 0 auto;
+  
+    box-sizing: border-box;
+  
+    &.user-box {
+      padding: 0 2rem;
+    }
+  }
+  

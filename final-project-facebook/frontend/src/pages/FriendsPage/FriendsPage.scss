@@ -1,0 +1,164 @@
+@import "../../styles/variables/colors.scss";
+
+.friends-page-wrapper {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Segoe UI", Arial, sans-serif;
+  padding-top: 56.8px;  
+}
+
+.friends-aside {
+  max-width: 310px;
+  width: 100%;
+  font-weight: 600;
+  color: $white;
+  border-right: 1px solid $gray_border;
+  background-color: $bg_brand;
+
+  height: calc(100vh - 56.8px);
+  overflow-y: auto;  /* Прокрутка всередині панелі, якщо контент виходить за межі */
+  position: sticky;  /* Панель буде закріплена на екрані */
+  top: 56.8px;  /* Відступ зверху для врахування хедера */ 
+}
+
+.friends-list {
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  &__item {
+    .activeFriends {
+      background-color: $link_hover;
+      .friends-list__icon-wrapper {
+        background-color: $blue;
+      }
+    }
+  }
+
+  .friends-list__icon-search {
+    fill: $black;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px 10px;
+    border-radius: 10px;
+    color: inherit;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $link_hover;
+    }
+  }
+  &__icon-wrapper {
+    width: 36px;
+    height: 36px;
+    background-color: $bg_light-gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
+}
+
+.friends-feed {
+  display: block;
+  width: 100%;
+  padding: 0;
+}
+
+
+@media screen and (min-width: 900px) {
+  .friends-feed {
+    .burger {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .friends-page-wrapper {
+    position: relative;
+
+    .media-aside {
+      display: none;
+      border-right: none;
+      min-height: auto;
+    }
+
+    .aside-active {
+      display: block;
+      position: fixed;
+      z-index: 20;
+      background-color: $bg_brand;
+      border-radius: 8px;
+      transform: translate(20px, 75px);
+      padding-top: 5px;
+      padding-bottom: 20px;
+      box-shadow: 0px 0px 10px $black; 
+      box-sizing: border-box;     
+
+      &.friends-aside {
+        font-size: 14px;
+        max-width: 80vw;
+        width: auto;
+        max-height: 60vh;
+        height: auto;
+        padding: 12px;
+        overflow-y: auto;
+        overflow-x: auto;
+      }
+
+      &::-webkit-scrollbar {
+        width: 12px; /* Ширина скролбару */
+      }
+    
+      &::-webkit-scrollbar-track {   /* скрол фон і рамка */
+        background: $border_input_primary;
+        border-radius: 6px;
+      }
+    
+      &::-webkit-scrollbar-thumb {   /* бігунок скролу фон і рамка для контрасту*/
+        background-color: $bg_light-gray;
+        border-radius: 6px;
+        border: 2px solid $border_input_primary;
+      }
+    
+      &::-webkit-scrollbar-thumb:hover {   /* ховер для бігунка */
+        background-color: $secondary_btn_bg_hover;
+      }
+
+      & .title-aside {
+        font-size: 18px;
+        text-align: center;
+        font-weight: bold;
+        margin-top: 4px;
+        margin-bottom: 6px;
+      }
+
+      & .friends-list {
+        margin-top: 4px;
+        margin-bottom: 4px;
+      }
+
+      & .friends-list__link {
+        padding: 4px;
+      }
+    }
+
+    .friends-feed {
+      position: relative;
+
+      .burger {
+        position: fixed;
+        top: 74px;
+        left: 30px;
+        display: flex;
+        z-index: 100;
+      }
+    }
+  }
+}

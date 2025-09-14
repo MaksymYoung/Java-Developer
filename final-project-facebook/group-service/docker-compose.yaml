@@ -1,0 +1,20 @@
+version: '3'
+
+networks:
+  app-network:
+    driver: bridge
+
+services:
+  app:
+    build:
+      context: .
+    container_name: group
+    networks:
+      - app-network
+    environment:
+      - MINIO_URL=http://3.86.165.75:9000
+      - MINIO_ACCESS_KEY=minioadmin
+      - MINIO_SECRET_KEY=minioadmin
+      - MINIO_BUCKET=groups
+    ports:
+      - '9000:9000'

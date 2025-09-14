@@ -1,0 +1,30 @@
+@use "../../styles/variables/colors.scss";
+
+.footer {
+    margin-top: auto;
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 10px;
+    }
+
+    &__list-item:not(:last-child) {
+        padding-right: 20px;
+        position: relative;
+        
+        &::before {
+            position: absolute;
+            content: ".";
+            bottom: 4px;
+            right: 9px;
+            color: rgb(101, 103, 107);
+        }
+    }
+
+    &__list-link {
+        text-decoration: none;
+        color: rgb(colors.$white, 0.7);
+        display: inline-block;
+        font-size: 13px;
+    }
+}

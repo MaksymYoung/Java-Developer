@@ -1,0 +1,193 @@
+@import "../../styles/variables/colors.scss";
+
+.friends-contant__container {
+  margin: 20px;
+
+  .friends-contant__title {
+    font-size: 20px;
+    font-weight: 700;
+    color: $white;
+    padding-bottom: 5px;
+    text-align: center;
+    margin-bottom: 30px;
+
+    @media screen and (max-width: 600px) {
+      padding-left: 20%;
+    }
+
+    @media screen and (max-width: 360px) {
+      padding-left: 30%;
+      text-align: end;
+    }
+  }
+
+  .friends-contant {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px auto;
+
+    @media screen and (max-width: 640px) {
+      justify-content: center;
+    }
+
+    .friends-contant__item {
+      display: flex;
+      flex-direction: column;
+      row-gap: 10px;
+      border-radius: 8px;
+      border: 1px solid $gray_border;
+      background-color: $bg_brand;
+      overflow: hidden;
+      width: 200px;
+      box-sizing: border-box;
+
+      @media screen and (max-width: 1210px) {
+        max-width: 200px;
+        width: 23%;
+      }
+
+      @media screen and (max-width: 1135px) {
+        width: 30%;
+      }
+
+      @media screen and (max-width: 950px) {
+        width: 40%;
+      }
+      
+      @media screen and (max-width: 900px) {
+        width: 23%;
+      }
+
+      @media screen and (max-width: 830px) {
+        width: 40%;
+      }
+
+      @media screen and (max-width: 690px) {
+        width: 30%;
+      }
+
+      @media screen and (max-width: 640px) {
+        width: 40%;
+      }
+
+      @media screen and (max-width: 490px) {
+        width: 60%;
+      }
+
+      @media screen and (max-width: 460px) {
+        max-width: 280px;
+        width: 100%;
+      }
+
+      .friends-contant__card {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+      }
+
+      .friends-contant__card-header {
+        min-height: 200px;
+        width: 100%;
+        height: 160px;
+
+        .friends-contant__avatar-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .friends-contant__card-main {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 10px;
+        row-gap: 1rem;
+
+        .friends-contant__user-name {
+          box-sizing: border-box;
+          color: $primary_text;
+          font-size: 1.0625rem;
+          font-weight: 600;
+          line-height: 1.1765;
+          text-decoration: none;
+          overflow: hidden;
+          white-space: normal; // /*Дозволяє перенос рядків */          
+          word-break: break-word; // /* Текст буде переноситися тільки по пробілах або на новий рядок */
+          overflow-wrap: break-word; // /* перенос по словах */
+          max-width: 100%;
+
+          // white-space: nowrap; /* Забороняє перенос тексту на новий рядок */
+          // overflow: hidden;    /* Ховає текст, що не вміщується */
+          // text-overflow: ellipsis; /* Додає три крапки, якщо текст занадто довгий */
+
+          @media screen and (max-width: 260px) {
+            font-size: 0.8rem;
+          }
+        }
+
+        .friends-contant__user-id {
+          color: $secondary_text;
+          font-size: 0.9375rem;
+          line-height: 1.3333;
+          margin-top: 2px;
+        }
+
+        .friends-contant__user-name:hover {
+          text-decoration: underline;
+          color: $btn_dark;
+        }
+
+        .friends-contant__container-btn {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .friends-contant__button-wrapper {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          row-gap: 10px;
+        }
+      }
+    }
+
+    .friends-contant__button-show {
+      display: flex;
+      align-items: start;
+      justify-content: center;
+
+      .friends__button-show-more {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .friends-contant__search-item--friend-label {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    font-size: 12px;
+    color: $secondary_text;
+    text-align: start;
+    box-sizing: border-box;
+    gap: 10px;
+
+    .friends-contant__search-item--friend-online {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #2374e1;
+    }
+
+    .friends-contant__search-item--friend-online.online {
+      background-color: green; // Колір для онлайн
+    }
+  }
+}

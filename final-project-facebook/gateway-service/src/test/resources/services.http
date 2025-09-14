@@ -1,0 +1,11 @@
+### authentication service
+GET http://localhost:8080/login
+
+### user profile service
+GET localhost:8090/profile
+
+### authentication service - using gateway
+GET http://localhost:9090/login
+
+### user profile service - using gateway
+GET http://localhost:9090/profile
