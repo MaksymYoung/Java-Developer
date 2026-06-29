@@ -1,0 +1,59 @@
+erDiagram
+USER {
+  int user_id PK
+  string name
+  string email
+  string password
+  date date_of_birth
+}
+
+POST {
+  int post_id PK
+  int user_id FK
+  string content
+  date date_posted
+}
+
+COMMENT {
+  int comment_id PK
+  int post_id FK
+  int user_id FK
+  string content
+  date date_commented
+}
+
+LIKE {
+  int like_id PK
+  int post_id FK
+  int user_id FK
+  date date_liked
+}
+
+FRIENDSHIP {
+  int friendship_id PK
+  int user1_id FK
+  int user2_id FK
+  date date_became_friends
+}
+
+GROUP {
+  int group_id PK
+  string group_name
+  string description
+}
+
+USERGROUP {
+  int usergroup_id PK
+  int user_id FK
+  int group_id FK
+  date date_joined
+}
+
+USER -> POST : writes
+POST -> COMMENT : has
+POST -> LIKE : receives
+USER -> COMMENT : writes
+USER -> LIKE : gives
+USER -> FRIENDSHIP : becomes_friends_with
+USER -> USERGROUP : joins
+GROUP -> USERGROUP : has_members

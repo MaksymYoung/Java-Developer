@@ -1,0 +1,215 @@
+@use "../../../styles/variables/colors.scss";
+@use "../../../styles/variables/colorsFacebook.scss";
+
+.create-group-page-wrapper {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Segoe UI", Arial, sans-serif;
+  padding-top: 56.8px;
+}
+
+.aside-wrapper.create-group-aside {
+  min-width: 310px;
+  max-width: 310px;
+}
+
+.create-group-aside {
+  user-select: none;
+  width: 310px;
+  min-height: auto;
+  background-color: colors.$bg_brand;
+  border-right: 1px solid colorsFacebook.$gray_border;
+
+  .custom-dropdown {
+    position: relative;
+    width: 100%;
+
+    &__icon {
+      position: absolute;
+      content: '';
+      width: 10px;
+      height: 10px;
+      right: 20px;
+      fill: colors.$white;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+
+    &__selected {
+      cursor: pointer;
+    }
+
+    &__selected-type {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      svg {
+        width: 20px;
+        height: 20px;
+        fill: #ffffff;
+      }
+    }
+
+    &__options {
+      padding: 6px;
+      box-sizing: border-box;
+      border-radius: 5px;
+      position: absolute;
+      top: 100%;
+      left: -1px;
+      width: 101%;
+      background-color: colors.$bg_brand;
+      box-shadow: 5px 5px 5px colors.$bg_veil,
+        0px -2px 5px colors.$bg_veil;
+      z-index: 1000;
+    }
+
+    &__option {
+      display: flex;
+      gap: 12px;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+
+      svg {
+        padding-top: 3px;
+        height: 20px;
+        width: 20px;
+        fill: #ffffff;
+      }
+
+      &:hover {
+        background-color: colors.$link_hover;
+      }
+    }
+
+    &__option-info {}
+
+    &__option-name {
+      padding-bottom: 3px;
+      font-weight: 500;
+    }
+
+    &__option-desc {
+      font-size: 13px;
+    }
+
+    &__privacy {
+      font-size: 14px;
+      padding: 8px 10px;
+    }
+
+    &__privacy-link {
+      color: colors.$icon_blue;
+      padding-left: 5px;
+    }
+
+    .aside-hr {
+      margin: 0 10px;
+      padding-top: 3px;
+    }
+  }
+
+  .error {
+    color: red;
+    font-size: 13px;
+    padding-left: 3px;
+  }
+
+  &__title {}
+
+  &__title-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 10px;
+  }
+}
+
+input:-webkit-autofill {
+  transition: all 5000s ease-in-out 0s;
+}
+
+.create-group-input {
+  font-size: 16px;
+  width: 100%;
+  padding: 22px 16px 14px 16px;
+  box-sizing: border-box;
+  margin-top: 10px;
+  border: 1px solid rgb(133, 133, 133);
+  border-radius: 6px;
+  background-color: inherit;
+  color: rgb(176, 179, 184);
+  transition: border-color 0.3s ease;
+
+  &:-webkit-autofill {
+    -webkit-transition-delay: 99999s;
+  }
+
+  &:hover {
+    border-color: rgb(173, 173, 173);
+  }
+
+  &:focus {
+    border: 1px solid colorsFacebook.$blue_facebook;
+    outline: none;
+  }
+
+  option:disabled {
+    background-color: colors.$bg_brand;
+  }
+
+  &>option {
+    font-weight: normal;
+    display: block;
+    padding: 5px;
+    white-space: nowrap;
+    background-color: colors.$bg_brand;
+
+    &:hover {
+      background-color: colors.$bg_light-gray;
+    }
+  }
+}
+
+.create-group-main {
+  padding: 56px 90px;
+  display: block;
+  max-height: calc(100vh - 57px);
+  box-sizing: border-box;
+}
+
+.create-group-btn {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.back {
+  cursor: pointer;
+  padding: 3px;
+}
+
+.back:hover {
+  background-color: colors.$link_hover;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 1050px) {
+
+  .create-group-main {
+    padding: 56px 10px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+
+  .aside-wrapper.create-group-aside {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .feed-wrapper.create-group-main {
+    display: none;
+  }
+}

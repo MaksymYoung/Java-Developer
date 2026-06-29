@@ -1,0 +1,22 @@
+@use "../../styles/variables/colors.scss";
+@use "../../styles/variables/colorsFacebook.scss";
+
+.burger-wrapper {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: colorsFacebook.$gray_background-input;
+    border-radius: 25px;
+    opacity: 0.95;
+    z-index: 80;
+    box-shadow: 0px 0px 3px colorsFacebook.$black;
+    cursor: pointer;
+
+    .burger-show-more {
+        width: 22px;
+        height: 22px;
+    }
+}

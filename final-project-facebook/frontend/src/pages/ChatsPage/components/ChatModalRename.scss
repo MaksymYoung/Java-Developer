@@ -1,0 +1,71 @@
+@use "../../../styles/variables/colors.scss";
+@use "../../../styles/base/general.scss";
+@use "../../../styles/variables/colorsFacebook.scss";
+
+.modal-rename-title-wrapper {
+  display: flex;
+  align-items: center;
+  padding-bottom: 5px;
+  color: rgb(228, 230, 235);
+}
+
+.modal-rename-title {
+  font-size: 18px;
+  font-weight: 600;
+  flex-grow: 1;
+}
+
+.modal-rename-close {
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: colors.$link_hover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.modal-rename-input {
+  font-size: 16px;
+  width: 100%;
+  padding: 22px 16px 14px 16px;
+  box-sizing: border-box;
+  margin-top: 10px;
+  border: 1px solid rgb(133, 133, 133);
+  border-radius: 6px;
+  background-color: inherit;
+  color: rgb(228, 230, 235);
+  transition: border-color 0.3s ease;
+  &:-webkit-autofill {
+    -webkit-transition-delay: 99999s;
+  }
+
+  &:hover {
+    border-color: rgb(173, 173, 173);
+  }
+  &:focus {
+    border: 1px solid colorsFacebook.$blue_facebook;
+    outline: none;
+  }
+}
+
+.modal-rename-desc {
+  color: rgb(228, 230, 235);
+  text-align: left;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.modal-rename-btn-wrapper {
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+  padding-top: 15px;
+}
+
+.modal-rename-btn-cancel {
+  background-color: transparent;
+}

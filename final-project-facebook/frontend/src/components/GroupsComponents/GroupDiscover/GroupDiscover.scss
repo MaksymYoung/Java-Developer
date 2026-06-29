@@ -1,0 +1,128 @@
+@use "../../../styles/variables/colors.scss";
+@use "../../../styles/variables/colorsFacebook.scss";
+
+.scroll-discover {
+    margin-top: 2rem;
+    overflow: hidden !important;
+
+    .loader-discover {
+        margin-top: 0;
+    }
+}
+
+.group-discover {
+    flex-grow: 1;
+    padding: 0 32px;
+    background-color: colors.$bg_body;
+    min-height: 100vh;
+
+    &__title-wrapper {
+        user-select: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 20px;
+    }
+
+    &__see-all {
+        color: colors.$link_blue;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        font-size: 17px;
+        padding: 10px;
+
+        &:hover {
+            background-color: colors.$link_hover;
+        }
+    }
+
+    &__title {
+        font-size: 20px;
+        font-weight: 700;
+        color: colors.$white;
+
+        padding-bottom: 5px;
+    }
+
+    &__subtitle {
+        user-select: none;
+        font-size: 17px;
+        font-weight: 400;
+        color: colors.$white;
+        opacity: 0.5;
+    }
+}
+
+.discover-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 20px;
+}
+
+
+
+.group-item {
+    position: relative;
+    min-height: 200px;
+    box-sizing: border-box;
+    background-color: colors.$bg_brand;
+    border-radius: 10px;
+    width: calc((100%/3) - 7px);
+    border: 1px solid colorsFacebook.$gray_border;
+    cursor: pointer;
+
+    .pending-info {}
+
+    @media screen and (max-width: 1300px) {
+        width: calc(50% - 5px);
+    }
+
+    @media screen and (max-width: 767px) {
+        width: 100%;
+    }
+
+    &__image {
+        display: block;
+        width: 100%;
+        height: 180px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        object-fit: cover;
+    }
+
+    &__description {
+        padding: 12px 16px;
+        border-top: 1px solid colorsFacebook.$gray_border;
+    }
+
+    &__title {
+        color: colors.$white;
+        font-size: 17px;
+        font-weight: 600;
+        padding: 10px 0;
+    }
+
+    &__type {
+        font-size: 13px;
+        padding-bottom: 10px;
+    }
+
+    &__btn {
+        width: 100%;
+    }
+
+}
+
+.groups-icon-gear:hover {
+    fill: colors.$gen_hover;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 520px) {
+    .group-discover {
+        padding: 0 15px;
+
+    }
+}

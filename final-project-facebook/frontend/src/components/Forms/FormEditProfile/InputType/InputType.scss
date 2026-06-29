@@ -1,0 +1,115 @@
+@use "../../../../styles/variables/colors.scss";
+
+.label__order {
+  width: 100%;
+  position: relative;
+}
+
+.input__select {
+  width: 100%;
+  height: 36px;
+  padding: 0 12px;
+
+  color: colors.$primary_text;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.65px;
+
+  border: none;
+  border-radius: 6px;
+  background-color: colors.$select_prime;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  &:hover {
+    border: none;
+    background-color: colors.$select_hover;
+    cursor: pointer;
+  }
+
+  &:focus {
+    height: 36px;
+    font-weight: 400;
+    outline: none;
+  }
+
+  & option {
+    font-weight: 400;
+    letter-spacing: none;
+    background: colors.$bg_brand;
+  }
+}
+
+.input__order {
+  width: 100%;
+  height: 58px;
+  padding: 0 16px;
+
+  color: colors.$primary_text;
+  font-size: 14px;
+
+  background-color: transparent;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 1px solid colors.$border_input_secondary;
+
+  &:hover {
+    border: 1px solid colors.$border_input_primary;
+  }
+  &:focus {
+    height: 58px;
+
+    color: colors.$primary_text;
+    font-weight: 400;
+
+    border: 2px solid colors.$white;
+    outline: 2px solid colors.$field_outline;
+    padding-left: 15px;
+  }
+
+  &::placeholder {
+    color: colors.$secondary_text;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  &:focus::placeholder {
+    color: colors.$secondary_placeholder;
+  }
+}
+
+.label__order:hover {
+  .label__title {
+    color: colors.$btn_hover;
+    font-weight: 600;
+    letter-spacing: 2px;
+  }
+}
+
+.error-message {
+  position: absolute;
+  margin-top: 7px;
+  margin-left: 20px;
+
+  color: colors.$error_input;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.75px;
+}
+
+.error-input {
+  border: none;
+  outline: 1px solid colors.$error_input;
+
+  &:focus {
+    border: none;
+    outline: 1px solid colors.$error_input;
+    padding: 15px 16px;
+  }
+  &:hover {
+    border: none;
+    outline: 1px solid colors.$error_input;
+  }
+}

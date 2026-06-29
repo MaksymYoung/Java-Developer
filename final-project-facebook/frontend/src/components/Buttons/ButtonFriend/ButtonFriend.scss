@@ -1,0 +1,22 @@
+@import "../../../styles/variables/colors.scss";
+
+.button-friend__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.button-friend {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+
+    .button-friend__icon-container {
+        width: 30px;
+    }
+
+    &.button-friend__confirmed {
+        background-color: $secondary_btn_bg;
+    }
+}

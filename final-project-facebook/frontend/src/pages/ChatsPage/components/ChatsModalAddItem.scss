@@ -1,0 +1,62 @@
+@use "../../../styles/variables/colors.scss";
+@use "../../../styles/base/general.scss";
+@use "../../../styles/variables/colorsFacebook.scss";
+
+.modal-add-title-wrapper {
+  display: flex;
+  align-items: center;
+  padding-bottom: 5px;
+  color: rgb(228, 230, 235);
+}
+
+.modal-add-title {
+  font-size: 20px;
+  font-weight: 600;
+  flex-grow: 1;
+}
+
+.modal-add-close {
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: colors.$link_hover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.modal-add-suggested {
+  font-size: 20px;
+  font-weight: 500;
+  color: rgb(228, 230, 235);
+  padding: 15px 0;
+  text-align: left;
+}
+
+.chat-modal-friend-wrapper {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.chat-modal-friend {
+  display: flex;
+  align-items: center;
+  color: rgb(228, 230, 235);
+  gap: 15px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  &:hover {
+    background-color: colors.$link_hover;
+  }
+
+  &__img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}

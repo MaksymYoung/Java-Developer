@@ -1,0 +1,265 @@
+@use "../../styles/variables/colors.scss";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import "../../styles/styles.scss";
+
+.scroll-feed {
+  overflow: hidden !important;
+  padding: 1rem 2rem 0;
+  box-sizing: border-box;
+}
+
+.feed-container {
+  display: flex;
+  justify-content: center;
+}
+
+.feed-list {
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem;
+
+  & .feed-card {
+    -webkit-box-shadow: 2px 3px 2px 0px rgba(110, 104, 110, 0.11);
+    -moz-box-shadow: 2px 3px 2px 0px rgba(110, 104, 110, 0.11);
+    box-shadow: 2px 3px 2px 0px rgba(110, 104, 110, 0.11);
+
+    font-family: "Open Sans", sans-serif;
+    background: $bg_brand;
+    padding: 20px 20px 5px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: #a9a9a9;
+    color: white;
+
+    & .feed-profile {
+      width: 100%;
+      display: flex;
+      margin-bottom: 20px;
+
+      &__edit {
+        margin-left: auto;
+        position: relative;
+
+        & .post_dropdown-menu {
+          display: flex;
+          flex-direction: column;
+          z-index: 100;
+          position: absolute;
+          background: #3a3b3c;
+        }
+      }
+
+      &__img {
+        width: 40px;
+        height: 40px;
+        left: 0;
+        border-radius: 20px;
+        object-fit: cover;
+        overflow: hidden;
+      }
+      & .feed-profile_box {
+        display: flex;
+        flex-direction: column;
+
+        .feed-profile__fullname {
+          line-height: 1.2;
+          font-weight: 600;
+          text-align: left;
+          font-size: 17px;
+          margin-left: 8px;
+          color: white;
+          text-decoration: none;
+        }
+        .feed-profile__datetime {
+          line-height: 1.5;
+          font-weight: 500;
+          text-align: left;
+          margin-left: 13px;
+          margin-left: 8px;
+          color: #78858c;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .scroll-feed {
+    padding: 1rem 1rem 0;
+  }
+  .feed-list {
+    width: 100%;
+    padding: 0;
+
+    .feed-card {
+      padding: 10px 10px 5px 10px;
+    }
+  }
+}
+
+.feed-content {
+  & .feed-content__wrapper {
+    & .feed-content__wrapper_text {
+      font-weight: 400;
+      font-size: 15px;
+      text-align: left;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.reactions-box {
+  margin-top: 10px;
+  padding-top: 4px;
+  border-top: 1px #676666 solid;
+  &_ico {
+    width: 30px;
+    height: 30px;
+    fill: #859098;
+  }
+
+  & .reactions-box__buttons {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    &_btn {
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 15px;
+      color: #859098;
+      padding: 0.7rem 10px;
+      border: none;
+      background: $bg_brand;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &_btn:hover {
+      border-radius: 8px;
+      color: colors.$gen_hover;
+      background: #3a3b3c;
+    }
+  }
+}
+
+.create-post {
+  font-family: "Open Sans", sans-serif;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  -webkit-box-shadow: 2px 3px 2px 0px rgba(110, 104, 110, 0.11);
+  -moz-box-shadow: 2px 3px 2px 0px rgba(110, 104, 110, 0.11);
+  box-shadow: 2px 3px 2px 0px rgba(110, 104, 110, 0.11);
+  background: $bg_brand;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+
+  & .layer1 {
+    display: grid;
+    grid-template-columns: 15% 80%;
+
+    & .create-post_box {
+      width: 40px;
+      height: 40px;
+      overflow: hidden;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      // width: 10%;
+      // border-radius: 20px;
+
+      &__img {
+        width: 100%;
+        width: 100%;
+        object-fit: cover;
+        // width: 2.5rem;
+        // height: 2.5rem;
+        // left: 0;
+        // border-radius: 20px;
+        // overflow: hidden;
+      }
+    }
+
+    & .create-post_comment {
+      &__input {
+        overflow: auto;
+        width: 100%;
+        padding-left: 10px;
+        color: white;
+        font-size: 23px;
+        height: 2.5rem;
+        background: #3a3b3c;
+        border: none;
+        border-radius: 10px;
+      }
+
+      &__input:focus {
+        font-size: 23px;
+        color: white;
+        background: #3a3b3c;
+        outline: none;
+        border: none;
+      }
+    }
+  }
+  & .layer2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    & .create-post_files {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-weight: 700;
+      font-size: 15px;
+      color: #859098;
+      border: none;
+      background: #3a3b3c;
+      border-radius: 8px;
+
+      &__label {
+        width: 100%;
+        cursor: pointer;
+
+        &-input {
+          display: none;
+        }
+      }
+    }
+
+    & .create-post_files:hover {
+      border-radius: 8px;
+      color: colors.$gen_hover;
+      background: #3a3b3c;
+    }
+
+    & .create-post_submit {
+      margin-left: 8px;
+
+      &__btn {
+        width: 100%;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 15px;
+        color: #859098;
+        padding: 0.7rem 10px;
+        border: none;
+        background: #3a3b3c;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+      }
+      &__btn:hover {
+        border-radius: 8px;
+        color: colors.$gen_hover;
+        background: #3a3b3c;
+      }
+    }
+  }
+}

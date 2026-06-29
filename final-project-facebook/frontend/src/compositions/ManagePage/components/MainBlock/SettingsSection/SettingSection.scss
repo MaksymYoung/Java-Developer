@@ -1,0 +1,112 @@
+@use "../../../../../styles/variables/colorsFacebook.scss";
+
+.settings-wrapper {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+    .settings-title {
+        font-size: 20px;
+        font-weight: 500;
+        color: colorsFacebook.$white;
+    }
+
+    .settings-item {
+        width: 100%;
+        height: 100%;
+        color: colorsFacebook.$white;
+        border-radius: 7px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        .item-section {
+            width: 100%;
+            height: 2em;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .setting-group-name {
+            width: auto;
+            height: auto;
+        }
+
+        .setting-group-name input:-webkit-autofill{
+            -webkit-text-fill-color: black !important;
+        }
+
+        .setting-info {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            color: colorsFacebook.$gray_light-text;
+            font-size: 0.75em;
+
+            .status-icon {}
+
+            .status-current {}
+
+            .number {}
+
+            .text {
+                margin-left: 10px;
+            }
+        }
+    }
+
+    .settings-item:hover {
+        background-color: colorsFacebook.$gray_border;
+    }
+
+    .settings-item.main-block {
+
+        .setting-groups-pencil {
+            width: 20px;
+            height: 20px;
+            fill: colorsFacebook.$gray_light-text;
+            cursor: pointer;
+        }
+
+        .setting-groups-pencil:hover {
+            fill: colorsFacebook.$gray_border-hover;
+        }
+    }
+
+    .settings-item.item-section {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.settings-item.main-block.slide-down {
+    background-color: colorsFacebook.$gray_background-modal;
+}
+
+.settings-item {
+    .button-section {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        align-items: center;
+        gap: 20px;
+    }
+}

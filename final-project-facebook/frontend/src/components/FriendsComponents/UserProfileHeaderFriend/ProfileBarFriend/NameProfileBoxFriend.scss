@@ -1,0 +1,28 @@
+@use "../../../../styles/variables/colors.scss";
+@use "../../../../styles/variables/fonts.scss";
+
+.profile-main_friend {
+  flex: 1.65;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 2rem 0 1rem;
+
+  font-family: fonts.$segoe;
+  line-height: 1.1875;
+
+  @media (max-width: 899px) {
+    padding: 1rem 0 0;
+    justify-content: start;
+    align-items: center;
+  }
+}
+
+.profile-main__name_friend {
+  font-size: 2rem;
+  font-weight: 700;
+
+  @media (max-width: 179px) {
+    text-align: center;
+  }
+}

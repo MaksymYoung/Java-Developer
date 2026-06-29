@@ -1,0 +1,15 @@
+@use "../../../styles/variables/colors.scss";
+@use "../../../styles/variables/colorsFacebook.scss";
+
+.havenot-chats-wrapper {
+    padding-top: 40px;
+    flex-grow: 1;
+    background-color: colors.$bg_brand;
+    border-left: 1px solid colorsFacebook.$gray_border;
+}
+
+.havenot-chats-title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+}

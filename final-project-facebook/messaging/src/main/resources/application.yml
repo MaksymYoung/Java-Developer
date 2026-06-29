@@ -1,0 +1,70 @@
+server:
+  port: ${APP_PORT}
+gateway:
+  url: ${GATEWAY_URL}
+logging:
+  level:
+    org:
+      hibernate: OFF
+---
+spring:
+  profiles:
+    active: prod
+logging:
+  level:
+    org:
+      hibernate: OFF
+---
+spring:
+  security:
+    jwt:
+      secret: ${JWT_SECRET}
+  sql:
+    init:
+      mode: always
+      data-locations: classpath:data-h2.sql
+      schema-locations: classpath:schema-h2.sql
+  config:
+    import: optional:file:./messaging/.env[.properties]
+    activate:
+      on-profile: local
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+logging:
+  level:
+    org:
+      hibernate: OFF
+---
+spring:
+  security:
+    jwt:
+      secret: ${JWT_SECRET}
+  config:
+    import: optional:file:./messaging/.env[.properties]
+    activate:
+      on-profile: prod
+  datasource:
+    url: jdbc:postgresql://${HOST}:5432/${POSTGRES_DATABASE}?currentSchema=${POSTGRES_SCHEMA}
+    username: ${POSTGRES_USERNAME}
+    password: ${POSTGRES_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+logging:
+  level:
+    org:
+      hibernate: OFF
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html

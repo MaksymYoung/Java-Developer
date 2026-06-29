@@ -1,0 +1,24 @@
+.profile-page__container {
+  .page__edit-wrapper {
+    margin-top: 1rem;
+
+    @media (min-width: 700px) and (max-width: 999px) {
+      margin: 0.75rem 0;
+    }
+    @media (max-width: 699px) {
+      margin: 0.5rem 0;
+    }
+    @media (min-width: 500px) and (max-width: 929px) {
+      border-radius: 10px;
+    }
+    @media (max-width: 499px) {
+      margin: 0;
+    }
+  }
+
+  .loader-edit {
+    position: relative;
+    top: 20px;
+    left: 0;
+  }
+}

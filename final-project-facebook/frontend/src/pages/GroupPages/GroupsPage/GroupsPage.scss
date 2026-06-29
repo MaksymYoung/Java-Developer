@@ -1,0 +1,304 @@
+@use "../../../styles/variables/colors.scss";
+@use "../../../styles/variables/colorsFacebook.scss";
+
+.groups-page-wrapper {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Segoe UI", Arial, sans-serif;
+  padding-top: 56.8px;
+  background-color: colors.$bg_brand;
+}
+
+.groups-aside {
+  user-select: none;
+  min-height: 100%;
+  font-weight: 600;
+  color: colors.$white;
+  max-width: 310px;
+  width: 100%;
+  border-right: 1px solid colorsFacebook.$gray_border;
+
+  height: calc(100vh - 56.8px);
+  overflow-y: auto;
+  position: sticky;
+  top: 56.8px;
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__subtitle-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    font-weight: 700;
+    padding: 8px 0;
+  }
+
+  &__see-all {
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: 400;
+    transition: background-color 0.3s ease;
+    color: colors.$link_blue;
+
+    &:hover {
+      background-color: colors.$link_hover;
+    }
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .group-feed {
+    .burger {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .groups-page-wrapper {
+    position: relative;
+
+    .media-aside {
+      display: none;
+      border-right: none;
+      min-height: auto;
+    }
+
+    .aside-active {
+      display: block;
+      position: fixed;
+      z-index: 20;
+      background-color: colorsFacebook.$gray_background-modal;
+      border-radius: 8px;
+      transform: translate(20px, 75px);
+      padding-top: 5px;
+      padding-bottom: 20px;
+      box-shadow: 0 0 10px colorsFacebook.$black; 
+      box-sizing: border-box;     
+
+      &.groups-aside {
+        font-size: 14px;
+        max-width: 80vw;
+        width: auto;
+        max-height: 70vh;
+        height: auto;
+        padding: 12px;
+        overflow-y: auto;
+        overflow-x: auto;
+      }
+
+      &::-webkit-scrollbar {
+        width: 12px; /* Ширина скролбару */
+      }
+    
+      &::-webkit-scrollbar-track {   /* скрол фон і рамка */
+        background: colors.$border_input_primary;
+        border-radius: 6px;
+      }
+    
+      &::-webkit-scrollbar-thumb {   /* бігунок скролу фон і рамка для контрасту*/
+        background-color: colors.$bg_light-gray;
+        border-radius: 6px;
+        border: 2px solid colors.$border_input_primary;
+      }
+    
+      &::-webkit-scrollbar-thumb:hover {   /* ховер для бігунка */
+        background-color: colors.$secondary_btn_bg_hover;
+      }
+
+      & .title-aside {
+        font-size: 18px;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      & .groups-list {
+        margin-top: 4px;
+        margin-bottom: 4px;
+      }
+
+      & .groups-list__link {
+        padding: 4px;
+      }
+
+      & .groups-aside__subtitle {
+        padding: 0;
+      }
+
+      & .border {
+        margin: 6px 0;
+      }
+    }
+
+    .group-feed {
+      position: relative;
+
+      .burger {
+        position: fixed;
+        top: 74px;
+        left: 30px;
+        display: flex;
+        z-index: 100;
+      }
+
+      .group-discover {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+      }
+
+      .your-groups {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .groups-page-wrapper {
+
+    .group-feed {
+
+      .burger {
+        left: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .group-discover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .group-discover__title {
+      font-size: 18px;
+    }
+  }
+
+  .your-groups {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .your-groups__title {
+      font-size: 18px;
+    }
+  }
+
+  @media screen and (max-width: 520px) {
+    .group-discover {
+
+      .group-discover__title-wrapper {
+        align-self: self-end;
+
+        .group-discover__title {
+          font-size: 16px;
+        }
+      }
+
+      .group-discover__subtitle {
+        align-self: self-end;
+        font-size: 15px;
+      }
+    }
+
+    .your-groups {
+      .your-groups__title-wrapper {
+        align-self: self-end;
+
+        .your-groups__title {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+
+.border {
+  border-bottom-width: 1px;
+  margin: 12px 0;
+  border-bottom-color: colorsFacebook.$gray_border;
+  border-bottom-style: solid;
+}
+
+.btn-add {
+  width: 100%;
+  cursor: pointer;
+}
+
+.groups-list {
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  &__item {
+    .activeGroup {
+      background-color: colors.$link_hover;
+
+      .groups-list__icon-wrapper {
+        background-color: colorsFacebook.$blue_facebook;
+      }
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px 10px;
+    border-radius: 10px;
+    color: inherit;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: colors.$link_hover;
+    }
+  }
+
+  &__icon-wrapper {
+    width: 36px;
+    height: 36px;
+    background-color: colors.$bg_light-gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
+}
+
+.group-feed {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  background-color: colors.$bg_body;
+
+}
+
+.groups-page-wrapper {
+  .group-feed {
+    .loader:not(.loader-discover) {
+      margin-top: 15%;
+    }
+  }
+}
+
+.aside-hr {
+  border-bottom: 1px solid colorsFacebook.$gray_border;
+  padding-top: 8px;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeLeaf.org">
+
+</head>
+<body>
+<h3>Status Directory</h3>
+<hr>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Service</th>
+        <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="tempStatuses:${serviceStatuses}">
+        <td th:text="${tempStatuses.serviceName}"/>
+        <td th:text="${tempStatuses.serviceStatus}"/>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

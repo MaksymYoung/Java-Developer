@@ -1,0 +1,41 @@
+.profile-page__container {
+  .friends-contant__container {
+    margin: 0;
+    margin-bottom: 1rem;
+
+    @media (max-width: 299px) {
+      padding: 0 8px;
+    }
+  }
+
+  .friends-contant__title {
+    @media (max-width: 999px) {
+      margin-bottom: 0;
+    }
+  }
+
+  .friends-contant {
+    justify-content: center;
+
+    @media (max-width: 319px) {
+      margin: 8px auto;
+      gap: 8px;
+    }
+  }
+
+  .friends-contant__item {
+    @media (max-width: 459px) {
+      width: 85%;
+      justify-content: space-between;
+    }
+    @media (max-width: 419px) {
+      width: 100%;
+    }
+  }
+
+  .friends-contant .friends-contant__item .friends-contant__card {
+    @media (max-width: 459px) {
+      width: 100%;
+    }
+  }
+}

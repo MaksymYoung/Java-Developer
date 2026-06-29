@@ -1,0 +1,108 @@
+@import "../../styles/variables/colors.scss";
+
+.login-page__container {
+    width: 100%;
+
+    &.login-page__container.light-theme {
+        background-color: $white-milk;
+    }
+
+    .login-page__content {
+        width: 100%;
+        margin: 50px auto 50px;
+        display: flex;
+        justify-content: center;
+        box-sizing: border-box;
+        position: relative;
+
+        @media (max-width: 1240px) {
+            flex-direction: column;
+            align-items: center;
+
+            .login-page__title {
+                text-align: center;
+            }
+        }
+
+        .login-page__title {
+            width: 400px;
+            color: $white;
+            font-weight: normal;
+            line-height: 30px;
+            user-select: none;
+
+            .login-page__title--text {
+                font-size: 26px;
+                margin-bottom: 20px;
+            }
+
+            .login-page__title--text.light-theme {
+                color: $black;
+            }
+
+            .login-page__title--logo {
+                color: $blue_facebook-hover;
+            }
+
+            .login-page__title--logo.light-theme {
+                color: $blue_facebook-hover-medium;
+            }
+
+            .login-page__title--greeting {
+                font-size: 22px;
+                color: $gray_light-text;
+            }
+
+            .login-page__title--greeting.light-theme {
+                color: $secondary_btn_bg_hover;
+            }
+
+            @media (max-width: 1240px) {
+                margin-bottom: 40px;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .login-page__title {
+                width: 100%;
+                text-align: center;
+
+                .login-page__title--text {
+                    font-size: 20px;
+                }
+
+                .login-page__title--greeting {
+                    font-size: 18px;
+                }
+            }
+
+            .form-login__container {
+                width: 100%;
+                padding: 10px;
+
+                .form-login__content {
+                    padding: 10px;
+                }
+
+                .form-login__button {
+                    width: 100%;
+                }
+
+                .fb-button.fb-green {
+                    width: 100%;
+                }
+            }
+        }
+
+        .theme-toggle-button {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 10px;
+            width: 60px;
+            padding: 4px;
+            box-sizing: border-box;
+            border-radius: 50%;
+        }
+    }
+}

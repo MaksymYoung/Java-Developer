@@ -1,0 +1,89 @@
+spring:
+  application:
+    name: gateway-service
+  config:
+    import: optional:file:./gateway-service/.env[.properties]
+  cloud:
+    gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+      globalcors:
+        add-to-simple-url-handler-mapping: true
+        cors-configurations:
+          '[/**]':
+            allowed-origins:
+              - http://localhost:63342
+              - http://localhost:5173
+            allowed-methods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - PATCH
+              - OPTIONS
+            allowed-headers: "*"
+            allow-credentials: true
+      routes:
+        - id: ${AUTH-S-ID}
+          uri: ${AUTH-URI}
+          predicates:
+            - Path=/api/v1/auth/**
+        - id: ${USER-CREATE-ID}
+          uri: ${AUTH-URI}
+          predicates:
+            - Path=/api/v1/users/**
+        - id: ${JWT-ID}
+          uri: ${AUTH-URI}
+          predicates:
+            - Path=/api/v1/jwt/**
+        - id: ${USER-PROFILE-ID}
+          uri: ${USER-PROFILE-URI}
+          predicates:
+            - Path=/api/v1/userprofile/**
+        - id: ${LIKE-S}
+          uri: ${LKF-URI}
+          predicates:
+            - Path=/api/v1/likes/**
+        - id: ${COMMENT-S}
+          uri: ${LKF-URI}
+          predicates:
+            - Path=/api/v1/comments/**
+        - id: ${FEED-S}
+          uri: ${LKF-URI}
+          predicates:
+            - Path=/api/v1/feeds/**
+        - id: ${MINIO-BUCKET-ID}
+          uri: ${MINIO-BUCKET-URI}
+          predicates:
+            - Path=/newsfeed/**
+        - id: ${BUCKET-S-ID}
+          uri: ${BUCKET-S-URI}
+          predicates:
+            - Path=/userprofile/**
+        - id: ${GROUP-S-ID}
+          uri: ${GROUP-S-URI}
+          predicates:
+            - Path=/api/groups/**
+        - id: ${MINIO-BUCKET-ID}1
+          uri: ${MINIO-BUCKET-URI}
+          predicates:
+            - Path=/groups/**
+        - id: ${MESSAGING-S-ID}
+          uri: ${MESSAGING-S-URI}
+          predicates:
+            - Path=/msg/**
+        - id: ${MESSAGING-WS-S-ID}
+          uri: ${MESSAGING-S-WS}
+          predicates:
+            - Path=/ws/msg/**
+        - id: ${FRIEND-S-ID}
+          uri: ${FRIEND-S-URI}
+          predicates:
+            - Path=/friend-requests/**
+#        - id: ${KAFKA-CONSUMER-ID}
+#          uri: ${KAFKA-CONSUMER-URI}
+#          predicates:
+#            - Path=/api/v1/kafka/**
+
+server:
+  port: 9090

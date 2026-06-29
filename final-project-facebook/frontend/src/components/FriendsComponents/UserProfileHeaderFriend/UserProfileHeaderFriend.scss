@@ -1,0 +1,29 @@
+@use "../../../styles/variables/colors.scss";
+@use "../../../styles/variables/fonts.scss";
+
+.user-profile__global_friend {
+  margin-bottom: 1rem;
+  background-color: colors.$bg_brand;
+
+  font-family: fonts.$segoe;
+}
+
+.user-profile__wrapper_friend {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-profile__inner_friend {
+  width: 100%;
+
+  box-sizing: border-box;
+  padding: 0 2rem;
+
+  @media (min-width: 1219px) and (max-width: 1249px) {
+    padding: 0 1.5rem;
+  }
+  @media (max-width: 1218px) {
+    padding: 0 1rem;
+  }
+}

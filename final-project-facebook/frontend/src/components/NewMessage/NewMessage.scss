@@ -1,0 +1,12 @@
+@use "../../styles/variables/colors.scss";
+
+.new-message {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: colors.$gen_hover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}

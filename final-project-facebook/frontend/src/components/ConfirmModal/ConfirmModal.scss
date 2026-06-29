@@ -1,0 +1,27 @@
+@use "../../styles/variables/colors.scss";
+
+.confirm-modal__content {
+    padding: 20px;
+    text-align: center;
+    font-size: 20px;
+    color: colors.$white;
+
+    .confirm-modal__name {
+        color: colors.$btn_dark;
+    }
+}
+
+.confirm-modal__actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+
+    .confirm-modal__button {
+        font-size: 18px;
+    }
+}
+
+.confirm-modal__actions .fb-gray {
+    min-width: 100px;
+}

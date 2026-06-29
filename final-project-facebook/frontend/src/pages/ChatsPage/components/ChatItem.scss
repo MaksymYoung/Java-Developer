@@ -1,0 +1,50 @@
+@use "../../../styles/variables/colors.scss";
+@use "../../../styles/variables/colorsFacebook.scss";
+
+.group-chat {
+    height: 68px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    color: colors.$white;
+    cursor: pointer;
+    border-radius: 10px;
+    box-sizing: border-box;
+    position: relative;
+
+    &:hover {
+        background-color: colors.$link_hover;
+    }
+    &__wrapper {
+        position: relative;
+    }
+    &__drop-down {
+        left: -265%;
+        right: -17%;
+        &::before {
+            right: 18%;
+        }
+    }
+
+    &__three-dots {
+        padding: 8px;
+        border-radius: 50%;
+        box-sizing: border-box;
+        height: 36px;
+        width: 36px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: colors.$link_hover;
+        &:hover {
+            background-color: colors.$bg_light-gray;
+          }
+    }
+}
+
+.group-chat-active {
+    background-color: colors.$bg_dark-blue;
+}

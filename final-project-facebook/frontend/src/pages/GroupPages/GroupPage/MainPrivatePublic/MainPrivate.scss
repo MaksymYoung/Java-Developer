@@ -1,0 +1,30 @@
+@use "../../../../styles/variables/colors.scss";
+@use "../../../../styles/variables/colorsFacebook.scss";
+
+.group-main-lock-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 360px;
+    background-color: colors.$bg_brand;
+    border-radius: 10px;
+}
+
+.group-main-lock {
+    text-align: center;
+    svg {
+        width: 112px;
+        height: 112px;
+    }
+
+    &__title {
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    &__desc {
+        padding-top: 6px;
+        font-size: 17px;
+        font-weight: 400;
+    }
+}

@@ -1,0 +1,72 @@
+@use "../../styles/variables/colors.scss";
+
+.page__edit-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 930px;
+
+  margin: 64px auto 0;
+  padding: 30px 56px 40px;
+
+  font-family: Arial;
+
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: colors.$bg_brand;
+
+  @media (max-width: 929px) {
+    min-height: calc(100vh - 56px);
+    margin: 56px auto 0;
+    border-radius: 0;
+  }
+  @media (min-width: 768px) and (max-width: 899px) {
+    padding: 16px 32px 20px;
+  }
+  @media (min-width: 400px) and (max-width: 767px) {
+    padding: 8px 16px 12px;
+  }
+  @media (max-width: 399px) {
+    padding: 4px 8px 8px;
+  }
+}
+
+.form-edit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (max-width: 929px) {
+    padding-top: 12px;
+  }
+}
+
+.legend-outer {
+  margin-bottom: 10px;
+  padding-left: 20px;
+
+  color: colors.$edit-profile_icon-logo;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.btn-edet-submit {
+  margin-top: 30px;
+}
+
+.loader-edit {
+  position: fixed;
+  top: calc(47%);
+  left: calc(50% - 25px);
+  width: 30px;
+  height: 30px;
+  padding: 3px;
+}
+
+.input-edit__wrapper {
+  position: relative;
+
+  display: flex;
+  width: 100%;
+  align-items: center;
+}

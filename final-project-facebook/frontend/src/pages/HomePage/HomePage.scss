@@ -1,0 +1,28 @@
+.home-page-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 56.8px;
+}
+
+.aside-left, 
+.aside-right {
+  height: calc(100vh - 56.8px);
+  overflow-y: auto;  /* Прокрутка всередині панелі, якщо контент виходить за межі */
+  position: sticky;  /* Панель буде закріплена на екрані */
+  top: 56.8px;  /* Відступ зверху для врахування хедера */  
+}
+
+@media screen and (max-width: 1200px) {
+  .aside-right {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .aside-right {
+    display: none;
+  }
+  .aside-left {
+    display: none;
+  }
+}

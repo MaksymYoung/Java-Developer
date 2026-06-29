@@ -1,0 +1,44 @@
+@use "../../../../styles/variables/colors.scss";
+
+.icon-edit__wrapper {
+  width: 25px;
+  height: 100%;
+
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  margin-right: 11px;
+  padding-top: 10px;
+}
+
+.icon-edit__element {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+
+  &.email {
+    fill: none;
+    stroke: colors.$editUser_icon;
+  }
+  &.fullname,
+  &.birthday,
+  &.phone,
+  &.interests,
+  &.gender {
+    fill: colors.$editUser_icon;
+  }
+  &.linkedin path {
+    fill: colors.$editUser_icon;
+  }
+  &.telegram path {
+    fill: colors.$editUser_icon;
+  }
+  &.viber {
+    & rect {
+      fill: colors.$editUser_icon;
+    }
+    & g {
+      fill: colors.$bg_brand;
+    }
+  }
+}

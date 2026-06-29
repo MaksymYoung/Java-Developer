@@ -1,0 +1,48 @@
+@use "../../../styles/variables/colors.scss";
+
+.search-group-item {
+    position: relative;
+    background-color: colors.$bg_brand;
+    border-radius: 10px;
+    padding: 10px 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    height: 90px;
+    box-sizing: border-box;
+    max-height: 100px;
+    max-width: 680px;
+
+    &__link {
+        width: 60px;
+        height: 60px;
+    }
+
+    &__img {
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 5px;
+        object-fit: cover;
+    }
+
+    &__info {
+        padding-left: 12px;
+        flex-grow: 1;
+    }
+    &__name {
+        color: colors.$white;
+        font-size: 17px;
+        font-weight: 600;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    &__type {
+        margin-top: 5px;
+        color: colors.$gen;
+        font-size: 15px;
+        font-weight: 400;
+    }
+}

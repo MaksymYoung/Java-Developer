@@ -1,0 +1,17 @@
+FROM vegardit/graalvm-maven:latest-java17 AS native-build
+WORKDIR /app
+COPY pom.xml .
+RUN mvn dependency:go-offline
+COPY /src /app/src
+COPY checkstyle-suppressions.xml .
+RUN mvn clean package -DskipTests
+EXPOSE 8081
+ENTRYPOINT ["/target/newsfeed-0.0.1-SNAPSHOT.jar"]
+#
+#FROM openjdk:17-jdk-slim
+#WORKDIR /app
+#COPY --from=native-build /app/application /app/application
+#EXPOSE 8081
+#ENTRYPOINT ["/app/application"]
+
+

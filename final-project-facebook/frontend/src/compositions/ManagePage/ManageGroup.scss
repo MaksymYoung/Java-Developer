@@ -1,0 +1,171 @@
+@use "../../styles/variables/colorsFacebook.scss";
+@use "../../styles/variables/colors.scss";
+
+.group-img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 0;
+    position: relative;
+
+    .group-img-btn-wrapper {
+        position: absolute;
+        bottom: 10px;
+        right: 0;
+
+        .fb-button:active {
+            right: 10px;
+            bottom: 10px;
+            height: 40px;
+            transform: translateY(-30%);
+        }
+    }
+
+    .image {
+        width: 100%;
+        height: 100%;
+        filter: grayscale(1);
+    }
+
+    .group-img-btn:hover {
+        background-color: colorsFacebook.$gray_background-button-op2;
+    }
+}
+
+.group-img-btn.fb-button {
+    width: 80px;
+    bottom: 10px;
+    right: 10px;
+    color: colorsFacebook.$white;
+    background-color: colorsFacebook.$gray_background-button-op1;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+
+
+    .pencil-icon {
+        width: 15px;
+        height: 15px;
+        fill: colorsFacebook.$white;
+    }
+
+}
+
+.settings-group-wrapper {
+    border-radius: 7px;
+
+}
+
+.main-block {
+    .manage__group-members {
+        color: colorsFacebook.$gray_light-text;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .main-block {
+        .burger {
+            display: none;
+        }
+    }
+}
+
+.home-button-section {
+    margin: 5px 0 10px 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid colorsFacebook.$gray_border;
+}
+
+@media screen and (max-width: 360px) {
+    .block-wrapper {
+        .aside-block {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .block-wrapper {
+        position: relative;
+
+        .media-aside {
+            display: none;
+            border-right: none;
+        }
+
+        .main-block {
+            position: relative;
+
+            .burger {
+                position: fixed;
+                top: 74px;
+                left: 30px;
+                display: flex;
+                padding-top: 5px;
+                padding-left: 15px;
+                z-index: 100;
+            }
+        }
+
+        .aside-active {
+            position: fixed;
+            z-index: 21;
+            width: 310px;
+            max-width: 80vw;
+            max-height: 60vh;
+            height: auto;
+            top: 135px;
+            left: 20px;
+            display: block;
+            border-right: none;
+            border-radius: 8px;
+            padding-bottom: 20px;
+            box-shadow: 0px 0px 3px colorsFacebook.$black;
+            overflow-y: auto;
+            overflow-x: auto;
+
+            &::-webkit-scrollbar {
+                width: 12px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: colors.$border_input_primary;
+                border-radius: 6px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: colors.$bg_light-gray;
+                border-radius: 6px;
+                border: 2px solid colors.$border_input_primary;
+            }
+
+            &::-webkit-scrollbar-thumb:hover {
+                background-color: colors.$secondary_btn_bg_hover;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .block-wrapper {
+
+        .main-block {
+
+            .burger {
+                left: 5px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .block-wrapper {
+        .aside-block.aside-active {
+            left: 10px;
+        }
+    }
+}

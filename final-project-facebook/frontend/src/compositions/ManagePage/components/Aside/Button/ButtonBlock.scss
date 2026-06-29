@@ -1,0 +1,19 @@
+@use "../../../../../styles/variables/colorsFacebook.scss";
+
+.button-block {
+    max-width: 360px;
+    width: auto;
+    border-bottom: 1px solid;
+    border-color: colorsFacebook.$gray_border;
+    padding-left: 15px;
+
+    .button-block-wrapper {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+}

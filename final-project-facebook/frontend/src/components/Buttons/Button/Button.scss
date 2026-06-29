@@ -1,0 +1,81 @@
+@use "../../../styles/variables/colors.scss";
+
+.fb-button {
+  color: colors.$btn_blue-color;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  background-color: colors.$btn_blue;
+  position: relative;
+
+  &:hover {
+    background-color: #165ecb;
+  }
+
+  &:active:not(:disabled) {
+    background-color: #1454b0;
+    top: 2px;
+    right: 2px;
+  }
+  &:disabled {
+    background-color: #4e4f50;
+    color: colors.$gray_light-text;
+  }
+}
+
+.fb-gray {
+  background-color: colors.$btn_grey;
+  color: colors.$btn_grey-color;
+
+  &:hover {
+    background-color: #4e4f50;
+  }
+
+  &:active:not(:disabled) {
+    background-color: #6a6b6c;
+  }
+}
+
+.fb-blue {
+  background-color: colors.$bg_brand;
+  color: colors.$blue;
+
+  &:hover:not(:disabled) {
+    background-color: colors.$btn_grey;
+  }
+
+  &:active:not(:disabled) {
+    background-color: #6a6b6c;
+  }
+}
+
+.fb-dark-blue {
+  background-color: colors.$btn_create;
+  color: colors.$btn_create-color;
+
+  &:hover {
+    background-color: rgba(29, 133, 252, 0.3);
+  }
+
+  &:active {
+    background-color: rgba(29, 133, 252, 0.5);
+  }
+}
+
+.fb-green {
+  background-color: #42b72a;
+
+  &:hover {
+    background-color: #36a420;
+  }
+
+  &:active {
+    background-color: #2b9217;
+  }
+}

@@ -1,0 +1,12 @@
+INSERT INTO friend_requests (sender_id, receiver_id, status, created_date, updated_date)
+VALUES (1, 2, 'PENDING', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+       (3, 4, 'ACCEPTED', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+       (3, 11, 'PENDING', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+       (4, 10, 'PENDING', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+       (8, 3, 'PENDING', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+       (3, 6, 'REJECTED', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
+INSERT INTO friends (user1_id, user2_id)
+VALUES (3, 4),
+       (3, 10),
+       (4, 10);

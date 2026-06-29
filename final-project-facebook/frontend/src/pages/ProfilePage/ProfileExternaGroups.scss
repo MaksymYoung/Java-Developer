@@ -1,0 +1,25 @@
+.profile-page__container {
+  .your-groups__title-wrapper {
+    padding: 1rem;
+  }
+
+  .your-groups {
+    @media (max-width: 1249px) {
+      padding: 0;
+    }
+  }
+
+  .your-groups-list {
+    padding-top: 0;
+    padding-bottom: 1rem;
+  }
+
+  .your-group-item {
+    @media (min-width: 700px) and (max-width: 901px) {
+      width: calc(50% - 5px);
+    }
+    @media (max-width: 699px) {
+      width: 100%;
+    }
+  }
+}

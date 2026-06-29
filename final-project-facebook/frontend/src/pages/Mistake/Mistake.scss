@@ -1,0 +1,76 @@
+.mistake-wrapper {
+    width: 100%;
+    height: 100%;
+    margin-top: 7%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .error-icon {}
+
+    .error-title {
+        font-size: 20px;
+        font-weight: 700;
+        color: #b0b3b8;
+    }
+
+    .error-text {
+        margin-top: 8px;
+        width: 450px;
+        font-size: 17px;
+        color: #b0b3b8;
+        text-align: center;
+    }
+
+    .error-button {
+        margin-top: 20px;
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .mistake-wrapper {
+        width: 100%;
+        height: 100%;
+        margin-top: 50px;
+
+        .error-title {
+            font-size: 18px;
+        }
+
+        .error-text {
+            margin-top: 8px;
+            font-size: 15px;
+        }
+
+        .error-button {
+            margin-top: 20px;
+            font-size: 15px;
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .mistake-wrapper {
+        width: 100%;
+        height: 100%;
+        margin-top: 50px;
+
+        .error-title {
+            font-size: 15px;
+        }
+
+        .error-text {
+            margin-top: 5px;
+            width: 90%;
+            font-size: 12px;
+        }
+
+        .error-button {
+            margin-top: 15px;
+            font-size: 12px;
+        }
+    }
+}

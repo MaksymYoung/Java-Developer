@@ -1,0 +1,51 @@
+@use "../../../../../styles/variables/colors.scss";
+@use "../../../../../styles/variables/fonts.scss";
+
+.profile-main {
+  flex: 1.65;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 2rem 0 1rem;
+
+  font-family: fonts.$segoe;
+  line-height: 1.1875;
+
+  @media (max-width: 899px) {
+    padding: 1rem 0 0;
+    justify-content: start;
+    align-items: center;
+  }
+}
+
+.profile-main__name {
+  font-size: 2rem;
+  font-weight: 700;
+  user-select: none;
+
+  @media (max-width: 499px) {
+    text-align: center;
+  }
+}
+
+.profile-main__friends {
+  padding-top: 7px;
+
+  & .link {
+    color: colors.$secondary_text;
+    font-size: 0.9375rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.loader_name-profile {
+  width: 30px;
+  height: 30px;
+  padding: 3px;
+}

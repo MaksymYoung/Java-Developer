@@ -1,0 +1,48 @@
+@use "../../../../styles/variables/colors.scss";
+
+.btn-plate.rectangle {
+  position: relative;
+  width: 48px;
+  height: 36px;
+
+  background-color: colors.$secondary_btn_bg;
+  box-sizing: border-box;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: colors.$secondary_btn_bg_hover;
+  }
+  &:active {
+    transform: scale(0.96);
+  }
+
+  @media (max-width: 100px) {
+    width: 100%;
+  }
+}
+
+.btn-plate.rectangle.dots {
+  @media (max-width: 150px) {
+    width: 100%;
+  }
+}
+
+.icon__element.arrow-down,
+.icon__element.dots {
+  position: absolute;
+  fill: colors.$secondary_button_text;
+}
+
+.icon__element.arrow-down {
+  font-size: 12px;
+  width: 1em;
+  height: 1em;
+}
+
+.icon__element.dots {
+  font-size: 1rem;
+  width: 1em;
+  height: 1em;
+}

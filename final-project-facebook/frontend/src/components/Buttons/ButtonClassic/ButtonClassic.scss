@@ -1,0 +1,82 @@
+@use "../../../styles/variables/colors.scss";
+@use "../../../styles/variables/fonts.scss";
+
+.btn {
+  position: relative;
+
+  min-width: 120px;
+  height: 36px;
+  padding: 0 12px 2px;
+
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+
+  font-family: fonts.$segoe;
+  font-size: 0.9375rem;
+  color: colors.$default_button_text;
+  font-weight: 600;
+  line-height: 1.3333;
+  white-space: nowrap;
+
+  background-color: colors.$white;
+  box-sizing: border-box;
+  border-radius: 6px;
+  border: none;
+
+  user-select: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: colors.$white-always_button-bg_hover;
+  }
+  &:active {
+    transform: scale(0.96);
+  }
+
+  @media (max-width: 899px) {
+    padding: 0 12px 1px;
+  }
+}
+
+.btn.fb-primary {
+  color: colors.$primary_button_text;
+  background-color: colors.$primary_btn_bg;
+
+  &:hover {
+    background-color: colors.$primary_btn_bg_hover;
+  }
+}
+.btn.fb-secondary {
+  color: colors.$secondary_button_text;
+  background-color: colors.$secondary_btn_bg;
+
+  &:hover {
+    background-color: colors.$secondary_btn_bg_hover;
+  }
+}
+.btn.fb-transparent {
+  color: colors.$primary_button_text;
+  font-weight: 700;
+  background-color: transparent;
+  border: 1px solid colors.$border_input_secondary;
+
+  &:hover {
+    background-color: colors.$fbs_btn_green_dard;
+  }
+  &:active {
+    background-color: colors.$fbs_btn_green;
+  }
+}
+
+@media (hover: none) {
+  .btn.fb-transparent:hover {
+    background-color: transparent;
+    transition: 600ms;
+  }
+  .btn.fb-transparent:active {
+    transition: 100ms;
+    background-color: colors.$fbs_btn_green;
+  }
+}

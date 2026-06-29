@@ -1,0 +1,171 @@
+@import "../../../styles/variables/colors.scss";
+
+.form-registration__box {
+    width: 790px;    
+    line-height: 28px;
+
+    .form-registration__title {
+        font-size: 32px;
+        color: $white;
+        user-select: none;
+    }
+
+    .form-registration__title.light-theme {
+        color: $black;
+    }
+
+    .form-registration__text--logo {
+        color: $blue_facebook-hover;
+    }
+
+    .form-registration__title-text {
+        font-size: 20px;
+        margin-bottom: 16px;
+        color: $gray_light-text;
+        user-select: none;
+    }
+
+    .form-registration__footer-text {
+        color: $gray_border-hover;
+        font-size: 14px;
+        user-select: none;
+    }
+
+    @media (max-width: 1024px) {
+        width: 490px;
+        line-height: 20px;
+
+        .form-registration__title {
+            font-size: 18px;
+        }
+        .form-registration__title-text {
+            font-size: 16px;
+            margin-bottom: 6px;
+        }
+        .form-registration__footer-text {
+            font-size: 10px;
+        }
+    }
+
+    @media (max-width: 620px) {
+        width: 100%;
+        padding: 10px;
+
+        .form-registration__title {
+            font-size: 16px;
+        }
+
+        .form-registration__title-text {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .form-registration__footer-text {
+            font-size: 10px;
+        }
+    }    
+}
+
+.form-registration__content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 110px);
+    grid-template-rows: auto;
+    column-gap: 10px;
+    row-gap: 20px;
+    justify-items: center;
+
+    .input__item-grid:nth-child(1),
+    .input__item-grid:nth-child(2),
+    .input__item-grid:nth-child(3),
+    .input__item-grid:nth-child(4) {
+        grid-column: span 3;
+    }
+
+    .input__item-grid:nth-child(5),
+    .input__item-grid:nth-child(6),
+    .input__item-grid:nth-child(7) {
+        grid-column: span 2;
+    }
+    
+    .input__item-grid:nth-child(8) {
+        grid-column: 3 / span 2;
+        margin-top: 26px;
+    }  
+    
+    .input__item-phone-date-select {
+        color: $gray_light-text;
+        font-size: 12px;
+    }
+
+    @media (max-width: 1024px) {
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: 10px;
+
+        .input__item-grid:nth-child(1),
+        .input__item-grid:nth-child(2),
+        .input__item-grid:nth-child(3),
+        .input__item-grid:nth-child(4),        
+        .input__item-grid:nth-child(5),
+        .input__item-grid:nth-child(8) {
+            grid-column: span 4;
+        }
+
+        .input__item-grid:nth-child(6),
+        .input__item-grid:nth-child(7) {
+            grid-column: span 2;
+        }
+
+        .input__item-phone-date-select {
+            font-size: 10px;
+        }
+
+        .fb-button.fb-green {
+            width: 60%;
+            margin: 30px 0 10px 0;
+        }
+    }
+
+    @media (max-width: 620px) {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 8px;
+        row-gap: 10px;
+
+        .input__item-grid {
+            grid-column: span 2;
+        }
+
+        .input__item-grid:nth-child(6),
+        .input__item-grid:nth-child(7) {
+            grid-column: span 2;
+        }
+
+        .fb-button.fb-green {
+            width: 100%;
+            margin: 20px 0 10px;
+        }
+    }
+}
+
+.form-registration__error,
+.form-registration__success,
+.form-registration__error-link {
+    font-size: 20px;
+    color: $red_error;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    @media (max-width: 1024px) {
+        font-size: 18px;
+    }      
+}
+
+.form-registration__error-link {
+    text-decoration: underline;
+    color: $gray_light-text;
+    font-size: 18px;
+}
+
+.form-registration__error-link:hover {
+    color: $blue_facebook-hover;
+}
